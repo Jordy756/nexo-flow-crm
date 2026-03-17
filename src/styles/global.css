@@ -15,7 +15,7 @@
   --primary-200: #cac4f4;
   --primary-300: #b8b0f0;
   --primary-400: #a79ded;
-  --primary-500: #8A63FF;
+  --primary-500: #8a63ff;
   --primary-600: #6655df;
   --primary-700: #3c27d0;
   --primary-800: #2d1d9c;
@@ -42,4 +42,8 @@
   .btn-secondary {
     @apply bg-neutral-950 text-neutral-50 border-neutral-950 transition;
   }
+}
+
+@utility bg-glass {
+  @apply bg-[#141414]/20 backdrop-blur-[10px];
 }
