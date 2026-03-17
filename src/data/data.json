@@ -1,11 +1,11 @@
 {
   "seo": {
-    "title": "PulseDesk CRM | Conversaciones que cierran ventas",
+    "title": "NexoFlow CRM | Conversaciones que cierran ventas",
     "description": "CRM inteligente para startups con WhatsApp y email nativos, automatizaciones de seguimiento y paneles de metricas en tiempo real."
   },
   "brand": {
-    "name": "PulseDesk CRM",
-    "tagline": "Talk less. Close faster.",
+    "name": "NexoFlow CRM",
+    "tagline": "Menos friccion. Mas cierres.",
     "description": "Convierte conversaciones en ingresos con un CRM colaborativo y asincronico, pensado para equipos de startup.",
     "primaryCta": {
       "label": "Solicitar demo",
@@ -104,12 +104,12 @@
     {
       "name": "SMTP / Brevo",
       "description": "Gestiona campañas y correos 1:1 con plantillas y etiquetas.",
-      "tag": "Email Engine"
+      "tag": "Motor de correo"
     },
     {
       "name": "Export CSV / PDF",
       "description": "Comparte resultados con finanzas, ventas y direccion en segundos.",
-      "tag": "Data Ready"
+      "tag": "Datos listos"
     }
   ],
   "workflow": [
@@ -126,7 +126,7 @@
   "faq": [
     {
       "q": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
-      "a": "Si. PulseDesk CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
+      "a": "Si. NexoFlow CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
     },
     {
       "q": "Que tan rapido es implementar WhatsApp y correo?",
@@ -144,7 +144,7 @@
     "secondary": { "label": "Hablar con ventas", "href": "#" }
   },
   "footer": {
-    "legal": "2026 PulseDesk CRM. Built for startup teams.",
+    "legal": "NexoFlow CRM. Hecho para equipos de startups.",
     "links": [
       { "label": "Privacidad", "href": "#" },
       { "label": "Terminos", "href": "#" },
