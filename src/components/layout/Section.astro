@@ -7,6 +7,6 @@ interface Props {
 const { id, class: className } = Astro.props;
 ---
 
-<section id={id} class:list={["w-[min(var(--max-width), 100%)]", className]}>
+<section id={id} class:list={["w-[min(var(--max-width),100%)]", className]}>
   <slot />
 </section>

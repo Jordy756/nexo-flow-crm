@@ -38,7 +38,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-(--primary-500) text-neutral-50 border-(--primary-500) transition;
+    @apply text-neutral-50 border-neutral-50 rounded-full transition;
   }
 
   .btn-secondary {

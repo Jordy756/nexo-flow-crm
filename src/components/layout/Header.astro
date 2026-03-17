@@ -9,12 +9,14 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<header class="sticky top-0 left-0 z-40 w-[min(var(--max-width),100%)] bg-red-400">
-  <nav class="flex items-center justify-between gap-4 rounded-2xl px-2 py-2">
+<header class="sticky top-0 left-0 z-40 w-[min(var(--max-width),100%)]">
+  <nav class="flex items-center justify-between gap-4 rounded-2xl px-2 py-4">
     <a href="#hero" class="">
       {data.brand.name}
     </a>
-    <ul class="flex items-center gap-2">
+    <ul
+      class="py-2.25 px-4.25 flex items-center gap-2 bg-neutral-800 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 rounded-full"
+    >
       {
         data.nav.map((item) => (
           <li>
