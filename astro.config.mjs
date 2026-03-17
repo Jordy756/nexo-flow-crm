@@ -8,5 +8,17 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  fonts: [],
+  fonts: [
+    {
+      name: "DM Sans",
+      provider: fontProviders.google(),
+      cssVariable: "--font-dm-sans",
+      weights: [400, 500, 700],
+      subsets: ["latin"],
+      styles: ["normal"],
+      display: "swap",
+      formats: ["woff2"],
+      fallbacks: ["sans-serif"],
+    },
+  ],
 });

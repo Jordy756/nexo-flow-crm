@@ -17,11 +17,9 @@
     }
   },
   "nav": [
-    { "label": "Producto", "href": "#hero" },
     { "label": "Funciones", "href": "#features" },
     { "label": "Integraciones", "href": "#integrations" },
-    { "label": "Metricas", "href": "#metrics" },
-    { "label": "FAQ", "href": "#faq" }
+    { "label": "Metricas", "href": "#metrics" }
   ],
   "hero": {
     "eyebrow": "Startup CRM",

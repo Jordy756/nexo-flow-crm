@@ -15,19 +15,17 @@
   --primary-200: #cac4f4;
   --primary-300: #b8b0f0;
   --primary-400: #a79ded;
-  --primary-500: #9589e9;
+  --primary-500: #8A63FF;
   --primary-600: #6655df;
   --primary-700: #3c27d0;
   --primary-800: #2d1d9c;
   --primary-900: #1e1368;
 
-  /* --font-poppins: "Poppins"; */
-
-  --max-width: 1160px;
+  --max-width: 1564px;
 }
 
 @theme inline {
-  /* --font-sans: var(--font-poppins); */
+  --font-sans: var(--font-dm-sans);
 }
 
 @layer base {
@@ -38,10 +36,10 @@
 
 @layer components {
   .btn-primary {
-    @apply text-neutral-50 border-neutral-50 rounded-full transition;
+    @apply bg-neutral-50 text-neutral-950 border-neutral-50 transition;
   }
 
   .btn-secondary {
-    @apply border-neutral-950;
+    @apply bg-neutral-950 text-neutral-50 border-neutral-950 transition;
   }
 }
