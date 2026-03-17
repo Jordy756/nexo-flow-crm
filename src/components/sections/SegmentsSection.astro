@@ -1,0 +1,37 @@
+---
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import type { SiteData } from "@scripts/config/site.types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="py-14 sm:py-20">
+  <Container>
+    <SectionHeading
+      eyebrow="Segmentacion inteligente"
+      title="Dos motores operativos: captacion y retencion"
+      description="Define experiencias y automatizaciones distintas para cada tipo de usuario sin duplicar trabajo."
+    />
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
+      {
+        data.segments.map((segment) => (
+          <article class="btn-glass rounded-2xl p-6">
+            <p class="text-xs uppercase tracking-[0.2em] text-violet-300">{segment.name}</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">{segment.description}</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-200">
+              {segment.bullets.map((bullet) => (
+                <li>• {bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>

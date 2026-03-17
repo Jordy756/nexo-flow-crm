@@ -1,0 +1,32 @@
+---
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import type { SiteData } from "@scripts/config/site.types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="faq" class="py-14 sm:py-20">
+  <Container>
+    <SectionHeading
+      eyebrow="FAQ"
+      title="Preguntas frecuentes"
+      description="Respuestas rapidas sobre implementacion y operacion del CRM."
+    />
+
+    <div class="mt-10 space-y-4">
+      {
+        data.faq.map((item) => (
+          <details class="btn-glass rounded-2xl p-5">
+            <summary class="cursor-pointer list-none text-base font-medium text-white">{item.q}</summary>
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </Container>
+</section>

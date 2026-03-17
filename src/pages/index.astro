@@ -1,7 +1,30 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+import HeroSection from "@components/sections/HeroSection.astro";
+import FeaturesSection from "@components/sections/FeaturesSection.astro";
+import SegmentsSection from "@components/sections/SegmentsSection.astro";
+import IntegrationsSection from "@components/sections/IntegrationsSection.astro";
+import MetricsSection from "@components/sections/MetricsSection.astro";
+import FaqSection from "@components/sections/FaqSection.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import rawData from "@data/data.json";
+import type { SiteData } from "@scripts/config/site.types";
+
+const data = rawData as SiteData;
 ---
 
-<Layout title="Hola">
-  <h1>Hola, Mundo!</h1>
+<Layout title={data.seo.title} description={data.seo.description}>
+  <Header data={data} />
+  <main>
+    <HeroSection data={data} />
+    <FeaturesSection data={data} />
+    <SegmentsSection data={data} />
+    <IntegrationsSection data={data} />
+    <MetricsSection data={data} />
+    <FaqSection data={data} />
+    <CtaSection data={data} />
+  </main>
+  <Footer data={data} />
 </Layout>

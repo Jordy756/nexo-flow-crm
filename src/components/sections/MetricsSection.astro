@@ -1,0 +1,68 @@
+---
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import type { SiteData } from "@scripts/config/site.types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="metrics" class="py-14 sm:py-20">
+  <Container>
+    <SectionHeading
+      eyebrow="Metricas y analitica"
+      title="Panel unico para decisiones comerciales"
+      description="Visualiza KPIs clave para operaciones de captacion y seguimiento con lectura inmediata."
+    />
+
+    <div class="mt-10 grid gap-4 lg:grid-cols-[1fr_1.05fr]">
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          data.kpis.map((kpi) => (
+            <article class="btn-glass rounded-2xl p-5">
+              <p class="text-xs uppercase tracking-[0.15em] text-slate-400">{kpi.label}</p>
+              <p class="mt-3 text-3xl font-semibold text-white">{kpi.value}</p>
+              <p class="mt-2 text-sm text-emerald-300">{kpi.trend}</p>
+            </article>
+          ))
+        }
+      </div>
+
+      <aside class="btn-glass-strong rounded-2xl p-6">
+        <p class="text-sm text-slate-200">Rendimiento por canal</p>
+        <div class="mt-5 space-y-4">
+          <div>
+            <div class="mb-1 flex items-center justify-between text-xs text-slate-300">
+              <span>WhatsApp</span>
+              <span>72%</span>
+            </div>
+            <div class="h-2 rounded-full bg-white/10">
+              <div class="h-full w-[72%] rounded-full bg-gradient-to-r from-violet-500 to-indigo-300"></div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-1 flex items-center justify-between text-xs text-slate-300">
+              <span>Email</span>
+              <span>61%</span>
+            </div>
+            <div class="h-2 rounded-full bg-white/10">
+              <div class="h-full w-[61%] rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-300"></div>
+            </div>
+          </div>
+          <div>
+            <div class="mb-1 flex items-center justify-between text-xs text-slate-300">
+              <span>Recordatorios auto</span>
+              <span>84%</span>
+            </div>
+            <div class="h-2 rounded-full bg-white/10">
+              <div class="h-full w-[84%] rounded-full bg-gradient-to-r from-indigo-500 to-sky-300"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,156 @@
+{
+  "seo": {
+    "title": "PulseDesk CRM | Conversaciones que cierran ventas",
+    "description": "CRM inteligente para startups con WhatsApp y email nativos, automatizaciones de seguimiento y paneles de metricas en tiempo real."
+  },
+  "brand": {
+    "name": "PulseDesk CRM",
+    "tagline": "Talk less. Close faster.",
+    "description": "Convierte conversaciones en ingresos con un CRM colaborativo y asincronico, pensado para equipos de startup.",
+    "primaryCta": {
+      "label": "Solicitar demo",
+      "href": "#cta"
+    },
+    "secondaryCta": {
+      "label": "Ver arquitectura",
+      "href": "#features"
+    }
+  },
+  "nav": [
+    { "label": "Producto", "href": "#hero" },
+    { "label": "Funciones", "href": "#features" },
+    { "label": "Integraciones", "href": "#integrations" },
+    { "label": "Metricas", "href": "#metrics" },
+    { "label": "FAQ", "href": "#faq" }
+  ],
+  "hero": {
+    "eyebrow": "Startup CRM",
+    "title": "Tu pipeline vive donde tu equipo conversa",
+    "highlight": "WhatsApp + Email + Automatizacion",
+    "description": "Gestiona leads activos y clientes en seguimiento en una sola bandeja. Etiqueta, segmenta y automatiza cada contacto sin perder contexto.",
+    "stats": [
+      { "label": "Tasa de respuesta", "value": "+34%" },
+      { "label": "Tiempo de seguimiento", "value": "-42%" },
+      { "label": "Mensajes por agente", "value": "3.1k" }
+    ],
+    "visualNotes": [
+      "Inbox unificado por contacto",
+      "Plantillas con etiquetas dinamicas",
+      "Recordatorios automaticos por estado"
+    ]
+  },
+  "featureGroups": [
+    {
+      "title": "Gestion de contactos",
+      "subtitle": "Segmentacion por estado del funnel",
+      "items": [
+        "Vistas para leads activos y clientes en seguimiento.",
+        "Filtros guardados por equipo comercial y soporte.",
+        "Etiquetas personalizadas por canal, fuente y prioridad."
+      ]
+    },
+    {
+      "title": "Comunicacion nativa",
+      "subtitle": "WhatsApp Cloud API + Email SMTP/Brevo",
+      "items": [
+        "Envio y registro de emails con historial por contacto.",
+        "Bandeja colaborativa en tiempo real y asincronica.",
+        "Plantillas y snippets para respuestas rapidas."
+      ]
+    },
+    {
+      "title": "Automatizacion",
+      "subtitle": "Seguimientos que no se olvidan",
+      "items": [
+        "Recordatorios de tareas por SLA o inactividad.",
+        "Disparadores por cambio de estado del funnel.",
+        "Secuencias de follow-up multicanal sin codigo."
+      ]
+    },
+    {
+      "title": "Analitica accionable",
+      "subtitle": "Panel de KPIs para crecimiento",
+      "items": [
+        "Contactos activos, mensajes enviados y tasa de respuesta.",
+        "Exportaciones en CSV o PDF para reportes.",
+        "Comparativas por canal, segmento y agente."
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "name": "Leads activos",
+      "description": "Prioriza prospectos con alta intencion y ejecuta secuencias de contacto en las primeras 24 horas.",
+      "bullets": [
+        "Scoring por engagement en WhatsApp/email",
+        "Alertas de oportunidad caliente",
+        "Vista Kanban por etapa comercial"
+      ]
+    },
+    {
+      "name": "Clientes en seguimiento",
+      "description": "Mantiene renovaciones, upsell y soporte en una vista operativa sin friccion.",
+      "bullets": [
+        "Recordatorios por vencimientos y tareas",
+        "Etiquetas por salud de cuenta",
+        "Automatizaciones para expansion de cartera"
+      ]
+    }
+  ],
+  "integrations": [
+    {
+      "name": "WhatsApp Cloud API",
+      "description": "Envia y recibe mensajes con trazabilidad completa por contacto.",
+      "tag": "Oficial Meta"
+    },
+    {
+      "name": "SMTP / Brevo",
+      "description": "Gestiona campañas y correos 1:1 con plantillas y etiquetas.",
+      "tag": "Email Engine"
+    },
+    {
+      "name": "Export CSV / PDF",
+      "description": "Comparte resultados con finanzas, ventas y direccion en segundos.",
+      "tag": "Data Ready"
+    }
+  ],
+  "workflow": [
+    "Captura y segmenta el contacto por canal y etapa.",
+    "Activa seguimiento automatico segun reglas del funnel.",
+    "Mide respuesta, avance y conversion en un tablero unico."
+  ],
+  "kpis": [
+    { "label": "Contactos activos", "value": "12,480", "trend": "+18% mensual" },
+    { "label": "Mensajes enviados", "value": "84,220", "trend": "+31% mensual" },
+    { "label": "Tasa de respuesta", "value": "67%", "trend": "+9 pts" },
+    { "label": "Seguimientos automatizados", "value": "41,900", "trend": "2.4x eficiencia" }
+  ],
+  "faq": [
+    {
+      "q": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
+      "a": "Si. PulseDesk CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
+    },
+    {
+      "q": "Que tan rapido es implementar WhatsApp y correo?",
+      "a": "La configuracion guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
+    },
+    {
+      "q": "Puedo exportar datos para reportes internos?",
+      "a": "Si. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
+    }
+  ],
+  "cta": {
+    "title": "Centraliza conversaciones, automatiza seguimiento y escala tu CRM",
+    "description": "Entrega un prototipo funcional con flujos de usuario, panel de metricas y base para documentar endpoints e instalacion.",
+    "primary": { "label": "Empezar prueba", "href": "#" },
+    "secondary": { "label": "Hablar con ventas", "href": "#" }
+  },
+  "footer": {
+    "legal": "2026 PulseDesk CRM. Built for startup teams.",
+    "links": [
+      { "label": "Privacidad", "href": "#" },
+      { "label": "Terminos", "href": "#" },
+      { "label": "Documentacion API", "href": "#" }
+    ]
+  }
+}

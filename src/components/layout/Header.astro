@@ -1,0 +1,33 @@
+---
+import Container from "@components/ui/Container.astro";
+import Button from "@components/ui/Button.astro";
+import type { SiteData } from "@scripts/config/site.types";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 pt-5">
+  <Container>
+    <nav class="btn-glass flex items-center justify-between gap-5 rounded-2xl px-4 py-3">
+      <a href="#hero" class="text-sm font-semibold tracking-[0.04em] text-white sm:text-base">
+        {data.brand.name}
+      </a>
+      <ul class="hidden items-center gap-5 text-sm text-slate-300 lg:flex">
+        {
+          data.nav.map((item) => (
+            <li>
+              <a class="transition hover:text-white" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <Button href={data.brand.primaryCta.href} size="md">{data.brand.primaryCta.label}</Button>
+    </nav>
+  </Container>
+</header>
