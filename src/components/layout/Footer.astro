@@ -1,5 +1,4 @@
 ---
-import Container from "@components/ui/Container.astro";
 import type { SiteData } from "@scripts/config/site.types";
 
 interface Props {
@@ -9,23 +8,21 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<footer class="pb-10 pt-16">
-  <Container>
-    <div
-      class="btn-glass flex flex-col items-start justify-between gap-4 rounded-2xl px-6 py-5 md:flex-row md:items-center"
-    >
-      <p class="text-sm text-slate-300">{data.footer.legal}</p>
-      <ul class="flex flex-wrap items-center gap-4 text-sm text-slate-400">
-        {
-          data.footer.links.map((item) => (
-            <li>
-              <a href={item.href} class="transition hover:text-white">
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </Container>
+<footer class="w-[min(var(--max-width),100%)] bg-red-400">
+  <section
+    class="surface-glass flex flex-col items-start justify-between gap-4 rounded-2xl px-6 py-5 md:flex-row md:items-center"
+  >
+    <p class="text-sm text-slate-300">{data.footer.legal}</p>
+    <ul class="flex flex-wrap items-center gap-4 text-sm text-slate-400" role="list">
+      {
+        data.footer.links.map((item) => (
+          <li>
+            <a href={item.href} class="transition hover:text-cyan-200">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </footer>

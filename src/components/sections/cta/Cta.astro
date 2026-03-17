@@ -1,0 +1,27 @@
+---
+import Container from "@components/ui/Container.astro";
+import type { SiteData } from "@scripts/config/site.types";
+import CtaActions from "./CtaActions.astro";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="cta" class="pb-8 pt-10 sm:pt-14">
+  <Container>
+    <article class="surface-glass-strong rounded-3xl px-6 py-10 text-center sm:px-12 sm:py-14">
+      <header>
+        <h2 class="mx-auto max-w-3xl text-3xl font-semibold leading-tight text-slate-100 sm:text-4xl">
+          {data.cta.title}
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">
+          {data.cta.description}
+        </p>
+      </header>
+      <CtaActions cta={data.cta} />
+    </article>
+  </Container>
+</section>

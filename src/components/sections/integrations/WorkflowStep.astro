@@ -1,0 +1,17 @@
+---
+interface Props {
+  step: string;
+  index: number;
+}
+
+const { step, index } = Astro.props;
+---
+
+<li class="flex gap-3 text-sm text-slate-200">
+  <span
+    class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-cyan-200/35 bg-cyan-300/15 text-xs text-cyan-100"
+  >
+    {index + 1}
+  </span>
+  <span>{step}</span>
+</li>

@@ -1,0 +1,42 @@
+---
+import type { SiteData } from "@scripts/config/site.types";
+import HeroStat from "./HeroStat.astro";
+import HeroVisual from "./HeroVisual.astro";
+import Link from "@components/ui/Link.astro";
+import Section from "@components/layout/Section.astro";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<Section id="hero" class="relative overflow-hidden pb-16 pt-16 sm:pb-22 sm:pt-22" aria-labelledby="hero-title">
+  <div class="grid items-center gap-12 lg:grid-cols-[1.01fr_0.99fr]">
+    <p class="text-xs uppercase tracking-[0.24em] text-cyan-300/85">{data.hero.eyebrow}</p>
+    <h1
+      id="hero-title"
+      class="mt-4 max-w-xl text-4xl font-semibold leading-tight text-slate-100 sm:text-5xl lg:text-6xl"
+    >
+      {data.hero.title}
+      <span class="text-accent block">{data.hero.highlight}</span>
+    </h1>
+    <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+      {data.hero.description}
+    </p>
+
+    <nav class="mt-8 flex flex-wrap gap-3" aria-label="Acciones principales">
+      <Link href={data.brand.primaryCta.href}>{data.brand.primaryCta.label}</Link>
+      <Link href={data.brand.secondaryCta.href} variant="secondary">
+        {data.brand.secondaryCta.label}
+      </Link>
+    </nav>
+
+    <div class="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
+      {data.hero.stats.map((stat) => <HeroStat stat={stat} />)}
+    </div>
+
+    <HeroVisual notes={data.hero.visualNotes} />
+  </div>
+</Section>

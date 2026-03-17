@@ -1,0 +1,26 @@
+---
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import type { SiteData } from "@scripts/config/site.types";
+import FeatureCard from "./FeatureCard.astro";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+---
+
+<section id="features" class="py-14 sm:py-20">
+  <Container>
+    <SectionHeading
+      eyebrow="Core capabilities"
+      title="Automatizaciones y colaboracion para CRM de alto ritmo"
+      description="Desde segmentacion hasta seguimiento asincronico, cada modulo esta pensado para operaciones de startup."
+    />
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
+      {data.featureGroups.map((feature) => <FeatureCard feature={feature} />)}
+    </div>
+  </Container>
+</section>

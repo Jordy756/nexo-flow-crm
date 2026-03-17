@@ -1,0 +1,14 @@
+---
+import type { HeroStat } from "@scripts/config/site.types";
+
+interface Props {
+  stat: HeroStat;
+}
+
+const { stat } = Astro.props;
+---
+
+<article class="surface-glass rounded-2xl p-4" aria-label={stat.label}>
+  <p class="text-xs uppercase tracking-[0.14em] text-slate-400">{stat.label}</p>
+  <p class="mt-2 text-2xl font-semibold text-slate-50">{stat.value}</p>
+</article>

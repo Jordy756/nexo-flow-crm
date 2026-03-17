@@ -1,14 +1,14 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"button"> {
+interface Props extends HTMLAttributes<"a"> {
   variant?: "primary" | "secondary";
 }
 
 const { variant = "primary", class: className, ...rest } = Astro.props;
 ---
 
-<button
+<a
   class:list={[
     "flex items-center justify-center gap-2 py-3 px-6 border rounded-sm cursor-pointer",
     `btn-${variant}`,
@@ -17,4 +17,4 @@ const { variant = "primary", class: className, ...rest } = Astro.props;
   {...rest}
 >
   <slot />
-</button>
+</a>

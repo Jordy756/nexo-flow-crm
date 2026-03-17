@@ -1,0 +1,17 @@
+---
+import type { Integration } from "@scripts/config/site.types";
+
+interface Props {
+  integration: Integration;
+}
+
+const { integration } = Astro.props;
+---
+
+<article class="surface-glass rounded-2xl p-5">
+  <header>
+    <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">{integration.tag}</p>
+    <h3 class="mt-2 text-lg font-semibold text-slate-100">{integration.name}</h3>
+  </header>
+  <p class="mt-2 text-sm text-slate-300">{integration.description}</p>
+</article>

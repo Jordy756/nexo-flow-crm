@@ -17,17 +17,11 @@ const { title, description = "CRM inteligente para conversaciones y seguimiento"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
     <title>{title}</title>
   </head>
-  <body class="min-h-screen antialiased">
-    <div class="page-shell">
+  <body class="bg-neutral-950 text-neutral-50 text-pretty">
+    <div class="relative flex flex-col gap-12 min-h-dvh overflow-clip items-center p-4">
       <slot />
     </div>
   </body>
