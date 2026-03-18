@@ -10,7 +10,7 @@ export interface HeroStat {
   value: string;
 }
 
-export interface FeatureGroup {
+export interface Features {
   title: string;
   subtitle: string;
   items: string[];
@@ -60,7 +60,7 @@ export interface SiteData {
     stats: HeroStat[];
     visualNotes: string[];
   };
-  featureGroups: FeatureGroup[];
+  features: Features[];
   segments: Segment[];
   integrations: Integration[];
   workflow: string[];

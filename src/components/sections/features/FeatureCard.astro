@@ -1,0 +1,24 @@
+---
+import Link from "@components/ui/Link.astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  reverse: boolean;
+}
+
+const { reverse } = Astro.props;
+---
+
+<article class:list={["flex items-center justify-between flex-wrap gap-4 w-full", reverse ? "flex-row-reverse" : ""]}>
+  <div class="flex flex-col items-start gap-4">
+    <h3 class="text-4xl">Your AI Sidekick, Always Ready</h3>
+    <p class="max-w-[50ch]">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus ex illo aliquam ea, eveniet at quos reiciendis
+      mollitia temporibus accusantium sed officiis sequi possimus? Facilis voluptatem in error aliquam ut?
+    </p>
+    <Link href="#">Learn more</Link>
+  </div>
+  <figure>
+    <Image src="/hero-dashboard.svg" width={100} height={100} alt="Feature 1" class="w-full h-auto max-w-125" />
+  </figure>
+</article>

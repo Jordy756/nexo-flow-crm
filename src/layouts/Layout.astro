@@ -23,9 +23,14 @@ const { title, description = "CRM inteligente para conversaciones y seguimiento"
     <Font cssVariable="--font-dm-sans" preload />
 
     <script src="../scripts/config/lenis.ts"></script>
+    <script src="./prueba.js"></script>
   </head>
   <body class="bg-neutral-950 text-neutral-50 text-pretty">
-    <div class="relative flex flex-col gap-12 min-h-dvh overflow-clip items-center">
+    <div id="root" class="relative flex flex-col gap-12 min-h-dvh overflow-clip items-center">
+      <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
+        <canvas id="canvas" class="w-full h-full"></canvas>
+      </div>
+
       <slot />
     </div>
   </body>

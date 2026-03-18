@@ -1,7 +1,6 @@
 ---
 import type { SiteData } from "@scripts/config/site.types";
 import Link from "@components/ui/Link.astro";
-import Section from "@components/layout/Section.astro";
 import { Image } from "astro:assets";
 import Badge from "@components/ui/Badge.astro";
 import FeatureIcon from "@components/icons/Feature.astro";
@@ -13,31 +12,35 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<Section class="relative flex flex-col gap-12">
-  <article class="flex flex-col gap-4 items-center text-center">
-    <Badge>
-      <FeatureIcon width={16} class="text-neutral-50" />
-      {data.hero.eyebrow}
-    </Badge>
-    <h2 class="text-7xl font-semibold max-w-[20ch]">{data.hero.title}</h2>
-    <p class="max-w-[70ch]">{data.hero.description}</p>
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <Link href={data.brand.secondaryCta.href} variant="secondary">{data.brand.secondaryCta.label}</Link>
-      <Link href={data.brand.primaryCta.href}>{data.brand.primaryCta.label}</Link>
-    </div>
-  </article>
+<section
+  class="relative flex flex-col items-center w-full after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-transparent after:-z-10"
+>
+  <div class="relative flex flex-col gap-12 w-[min(var(--max-width),100%)]">
+    <article class="flex flex-col gap-4 items-center text-center">
+      <Badge>
+        <FeatureIcon width={16} class="text-neutral-50" />
+        {data.hero.eyebrow}
+      </Badge>
+      <h2 class="text-7xl font-semibold max-w-[20ch]">{data.hero.title}</h2>
+      <p class="max-w-[70ch]">{data.hero.description}</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <Link href={data.brand.secondaryCta.href} variant="secondary">{data.brand.secondaryCta.label}</Link>
+        <Link href={data.brand.primaryCta.href}>{data.brand.primaryCta.label}</Link>
+      </div>
+    </article>
 
-  <figure class="flex w-full">
-    <Image
-      src="/images/hero_dashboard_img.png"
-      width={1160}
-      height={650}
-      alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"
-      class="rounded-2xl w-full"
-      loading="eager"
-    />
-  </figure>
-  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
-    <video src="/videos/hero2.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
+    <figure class="flex w-full">
+      <Image
+        src="/images/hero_dashboard_img.png"
+        width={1160}
+        height={650}
+        alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"
+        class="rounded-2xl w-full"
+        loading="eager"
+      />
+    </figure>
+    <!-- <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
+      <video src="/videos/hero2.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
+    </div> -->
   </div>
-</Section>
+</section>

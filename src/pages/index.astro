@@ -1,8 +1,9 @@
 ---
 import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
-import Section from "@components/layout/Section.astro";
+import Features from "@components/sections/features/Features.astro";
 import Hero from "@components/sections/hero/Hero.astro";
+import Plans from "@components/sections/plans/Plans.astro";
 import rawData from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import type { SiteData } from "@scripts/config/site.types";
@@ -12,23 +13,14 @@ const data = rawData as SiteData;
 
 <Layout title={data.seo.title} description={data.seo.description}>
   <Header data={data} />
-  <main class="w-full flex-1 flex flex-col items-center gap-12">
+  <main class="flex-1 flex flex-col items-center gap-12 w-full">
     <Hero data={data} />
-    <div class="flex flex-col items-center gap-12 bg-neutral-950 w-full">
-      <Section class="flex flex-col gap-12">
-        <h2 class="text-5xl font-semibold max-w-[20ch]">
-          {data.brand.name} es el CRM inteligente para equipos de startups
-        </h2>
-        <p class="max-w-[70ch]">{data.brand.description}</p>
-      </Section>
-    </div>
-    <!--
+    <!-- <div
+      class="relative flex-1 flex flex-col items-center gap-12 w-full bg-neutral-950 before:absolute before:bottom-full before:h-12 before:w-full before:bg-neutral-950 after:absolute after:top-full after:h-12 after:w-full after:bg-neutral-950"
+    > -->
     <Features data={data} />
-    <Segments data={data} />
-    <Integrations data={data} />
-    <Metrics data={data} />
-    <Faq data={data} />
-    <Cta data={data} /> -->
+      <Plans />
+    <!-- </div> -->
   </main>
   <Footer data={data} />
 </Layout>

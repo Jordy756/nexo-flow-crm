@@ -30,17 +30,12 @@
       { "label": "Tasa de respuesta", "value": "+34%" },
       { "label": "Tiempo de seguimiento", "value": "-42%" },
       { "label": "Mensajes por agente", "value": "3.1k" }
-    ],
-    "visualNotes": [
-      "Inbox unificado por contacto",
-      "Plantillas con etiquetas dinamicas",
-      "Recordatorios automaticos por estado"
     ]
   },
-  "featureGroups": [
+  "features": [
     {
       "title": "Gestion de contactos",
-      "subtitle": "Segmentacion por estado del funnel",
+      "description": "Segmentacion por estado del funnel",
       "items": [
         "Vistas para leads activos y clientes en seguimiento.",
         "Filtros guardados por equipo comercial y soporte.",
@@ -49,7 +44,7 @@
     },
     {
       "title": "Comunicacion nativa",
-      "subtitle": "WhatsApp Cloud API + Email SMTP/Brevo",
+      "description": "WhatsApp Cloud API + Email SMTP/Brevo",
       "items": [
         "Envio y registro de emails con historial por contacto.",
         "Bandeja colaborativa en tiempo real y asincronica.",
@@ -58,7 +53,7 @@
     },
     {
       "title": "Automatizacion",
-      "subtitle": "Seguimientos que no se olvidan",
+      "description": "Seguimientos que no se olvidan",
       "items": [
         "Recordatorios de tareas por SLA o inactividad.",
         "Disparadores por cambio de estado del funnel.",
@@ -67,12 +62,58 @@
     },
     {
       "title": "Analitica accionable",
-      "subtitle": "Panel de KPIs para crecimiento",
+      "description": "Panel de KPIs para crecimiento",
       "items": [
         "Contactos activos, mensajes enviados y tasa de respuesta.",
         "Exportaciones en CSV o PDF para reportes.",
         "Comparativas por canal, segmento y agente."
       ]
+    }
+  ],
+  "plans": [
+    {
+      "name": "Starter",
+      "description": "Kick off your project with core features for individuals and small teams.",
+      "features": [
+        "Up to 3 users",
+        "Essential dashboard",
+        "Basic task management",
+        "Real-time chat",
+        "1 GB secure storage"
+      ],
+      "isPrincipal": false
+    },
+    {
+      "name": "Pro",
+      "description": "More power for growing teams ready to move faster.",
+      "price": {
+        "amount": 49.99,
+        "period": "month"
+      },
+      "features": [
+        "Up to 3 users",
+        "Essential dashboard",
+        "Basic task management",
+        "Real-time chat",
+        "1 GB secure storage"
+      ],
+      "isPrincipal": true
+    },
+    {
+      "name": "Enterprise",
+      "description": "Kick off your project with core features for individuals and small teams.",
+      "price": {
+        "amount": 99.99,
+        "period": "month"
+      },
+      "features": [
+        "Up to 3 users",
+        "Essential dashboard",
+        "Basic task management",
+        "Real-time chat",
+        "1 GB secure storage"
+      ],
+      "isPrincipal": false
     }
   ],
   "segments": [

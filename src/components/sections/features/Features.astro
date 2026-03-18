@@ -1,0 +1,15 @@
+---
+import type { SiteData } from "@scripts/config/site.types";
+import FeatureCard from "./FeatureCard.astro";
+
+interface Props {
+  data: SiteData;
+}
+
+const { data } = Astro.props;
+const { features } = data;
+---
+
+<section class="flex flex-col items-center gap-20 w-[min(1160px,100%)]">
+  {features.map((feature, index) => <FeatureCard reverse={index % 2 !== 0} />)}
+</section>
