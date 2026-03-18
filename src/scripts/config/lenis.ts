@@ -1,10 +1,5 @@
-import Lenis from "lenis";
+// import Lenis from "lenis";
 
-const lenis = new Lenis();
-
-const raf = (time: number) => {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-};
-
-requestAnimationFrame(raf);
+// export const lenis = new Lenis({
+//   autoRaf: true,
+// });
