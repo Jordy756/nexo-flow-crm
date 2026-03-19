@@ -1,47 +1,56 @@
 ---
-import type { SiteData } from "@scripts/config/site.types";
+import { Image } from "astro:assets";
 
-interface Props {
-  data: SiteData;
-}
-
-const { data } = Astro.props;
 const year = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    title: "Empresa",
+    links: [
+      { label: "Funciones", href: "/#functions" },
+      { label: "Integraciones", href: "/#integrations" },
+      { label: "Metricas", href: "/#metrics" },
+      { label: "Precios", href: "/#pricing" },
+      { label: "FAQ", href: "/#faq" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Términos de Servicio", href: "/terms" },
+      { label: "Política de Privacidad", href: "/privacy" },
+    ],
+  },
+];
 ---
 
 <footer class="flex flex-col items-center gap-6 w-full p-4 py-16 bg-neutral-950">
-  <section class="w-[min(var(--max-width),100%)] flex justify-end gap-4">
-    <div>
-      <h2>Legal</h2>
-      <ul class="">
-        {
-          data.footer.links.map((item) => (
-            <li>
-              <a href={item.href} class="transition hover:text-cyan-200">
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+  <section class="w-[min(var(--max-width),100%)] flex justify-between gap-16">
+    <div class="flex flex-col gap-4">
+      <Image src="/hero-chat.svg" alt={"Logo"} width={150} height={50} />
+      <p class="">Slogan</p>
     </div>
-    <div>
-      <h2>Legal</h2>
-      <ul class="">
-        {
-          data.footer.links.map((item) => (
-            <li>
-              <a href={item.href} class="transition hover:text-cyan-200">
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <nav class="flex gap-16">
+      {
+        footerLinks.map((section) => (
+          <div class="flex flex-col gap-4">
+            <h2 class="text-lg font-medium">{section.title}</h2>
+            <ul class="flex flex-col gap-2">
+              {section.links.map((item) => (
+                <li class="opacity-80">
+                  <a href={item.href} class="transition hover:text-cyan-200">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </nav>
   </section>
   <div class="w-[min(var(--max-width),100%)] h-px bg-neutral-800"></div>
   <section class="w-[min(var(--max-width),100%)]">
-    <p class="">&copy; {year} {data.footer.legal}</p>
+    <p class="">&copy; {year} NexoFlow CRM. Hecho para equipos de startups.</p>
   </section>
 </footer>

@@ -1,4 +1,5 @@
 ---
+import CheckIcon from "@components/icons/Check.astro";
 import Link from "@components/ui/Link.astro";
 
 interface Props {
@@ -37,7 +38,14 @@ const { name, description, price, features, isPrincipal } = Astro.props;
       )
     }
     <ul class="flex flex-col gap-1">
-      {features.map((feature) => <li>- {feature}</li>)}
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2">
+            <CheckIcon width={20} class="text-neutral-50" />
+            {feature}
+          </li>
+        ))
+      }
     </ul>
   </section>
   <footer>

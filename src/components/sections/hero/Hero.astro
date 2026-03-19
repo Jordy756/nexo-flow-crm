@@ -1,34 +1,31 @@
 ---
-import type { SiteData } from "@scripts/config/site.types";
-import Link from "@components/ui/Link.astro";
-import { Image } from "astro:assets";
-import Badge from "@components/ui/Badge.astro";
 import FeatureIcon from "@components/icons/Feature.astro";
+import Badge from "@components/ui/Badge.astro";
+import Link from "@components/ui/Link.astro";
+import { basics } from "@data/data.json";
+import { Image } from "astro:assets";
 
-interface Props {
-  data: SiteData;
-}
-
-const { data } = Astro.props;
+const { highlight, title, description } = basics;
 ---
 
 <section
-  class="relative flex flex-col items-center w-full after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-transparent after:-z-10"
+  class="relative flex flex-col items-center w-full after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-neutral-950 after:-z-10"
 >
-  <div class="relative flex flex-col gap-12 w-[min(var(--max-width),100%)]">
+  <div class="relative flex flex-col gap-32 w-[min(var(--max-width),100%)]">
     <article class="flex flex-col gap-4 items-center text-center">
       <Badge>
         <FeatureIcon width={16} class="text-neutral-50" />
-        {data.hero.eyebrow}
+        {highlight}
       </Badge>
-      <h2 class="text-7xl font-semibold max-w-[20ch]">{data.hero.title}</h2>
-      <p class="max-w-[70ch]">{data.hero.description}</p>
+      <h2 class="text-7xl font-semibold max-w-[15ch] flex flex-col">
+        {title}
+      </h2>
+      <p class="max-w-[70ch]">{description}</p>
       <div class="flex flex-wrap items-center justify-center gap-4">
-        <Link href={data.brand.secondaryCta.href} variant="secondary">{data.brand.secondaryCta.label}</Link>
-        <Link href={data.brand.primaryCta.href}>{data.brand.primaryCta.label}</Link>
+        <Link href="/#plans" variant="secondary">Ver planes</Link>
+        <Link href="https://google.com" target="_blank">Solicitar demo</Link>
       </div>
     </article>
-
     <figure class="flex w-full">
       <Image
         src="/images/hero_dashboard_img.png"
@@ -39,8 +36,5 @@ const { data } = Astro.props;
         loading="eager"
       />
     </figure>
-    <!-- <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
-      <video src="/videos/hero2.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
-    </div> -->
   </div>
 </section>

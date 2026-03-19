@@ -1,97 +1,108 @@
 import * as THREE from "three/webgpu";
 import {
-  luminance,
-  cos,
-  min,
-  time,
-  atan,
-  uniform,
-  pass,
+  Fn,
   PI,
   TWO_PI,
+  atan,
   color,
+  cos,
+  luminance,
+  min,
+  pass,
   positionLocal,
   sin,
   texture,
-  Fn,
+  time,
+  uniform,
   uv,
   vec2,
   vec3,
   vec4,
 } from "three/tsl";
-import { bloom } from "three/addons/tsl/display/BloomNode.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Inspector } from "three/addons/inspector/Inspector.js";
+import { bloom } from "three/addons/tsl/display/BloomNode.js";
 import Lenis from "lenis";
 
-let camera, scene, renderer, renderPipeline, controls;
+type CameraKeyframe = {
+  position: any;
+  target: any;
+};
 
-let scrollProgress = 0;
+type SceneRuntime = {
+  camera: any;
+  renderer: any;
+  renderPipeline: any;
+  controls: any;
+  currentCameraPosition: any;
+  currentCameraTarget: any;
+  getScrollProgress: () => number;
+};
 
-// Posiciones de cámara por sección — ajusta estos valores a tu gusto
-const cameraKeyframes = [
-  { position: new THREE.Vector3(1, 1, 3), target: new THREE.Vector3(0, 0.4, 0) }, // sección 1
-  { position: new THREE.Vector3(3, 0.5, 1), target: new THREE.Vector3(0, 0.4, 0) }, // sección 2
-  { position: new THREE.Vector3(-2, 2, 2), target: new THREE.Vector3(0, 0.6, 0) }, // sección 3
-  { position: new THREE.Vector3(0, 3, 0.5), target: new THREE.Vector3(0, 0.4, 0) }, // sección 4
+const CAMERA_KEYFRAMES: CameraKeyframe[] = [
+  { position: new THREE.Vector3(1, 1, 3), target: new THREE.Vector3(0, 0.4, 0) },
+  { position: new THREE.Vector3(3, 0.5, 1), target: new THREE.Vector3(0, 0.4, 0) },
+  { position: new THREE.Vector3(-2, 2, 2), target: new THREE.Vector3(0, 0.6, 0) },
+  { position: new THREE.Vector3(0, 3, 0.5), target: new THREE.Vector3(0, 0.4, 0) },
 ];
 
-// Posición actual interpolada (lerp suavizado)
-const currentCamPos = new THREE.Vector3(1, 1, 3);
-const currentCamTarget = new THREE.Vector3(0, 0.4, 0);
+const CAMERA_SMOOTHING = 0.05;
 
-const lenis = new Lenis({ autoRaf: true });
-
-lenis.on("scroll", ({ progress }) => {
-  scrollProgress = progress;
-});
-
-init();
-
-function init() {
-  camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 50);
-  camera.position.set(1, 1, 3);
-
-  scene = new THREE.Scene();
-
-  const textureLoader = new THREE.TextureLoader();
-  const perlinTexture = textureLoader.load("./textures/noises/perlin/rgb-256x256.png");
+const createNoiseTexture = (textureLoader: any): any => {
+  // This texture drives the procedural-looking shader noise; removing it breaks the effect.
+  const perlinTexture = textureLoader.load("/textures/noises/perlin/rgb-256x256.png");
   perlinTexture.wrapS = THREE.RepeatWrapping;
   perlinTexture.wrapT = THREE.RepeatWrapping;
+  return perlinTexture;
+};
 
-  const toRadialUv = Fn(([uv, multiplier, rotation, offset]) => {
-    const centeredUv = uv.sub(0.5).toVar();
+const createShaderFunctions = () => {
+  const toRadialUv = Fn((inputs: [any, any, any, any]) => {
+    const [inputUv, multiplier, rotation, offset] = inputs;
+    const centeredUv = inputUv.sub(0.5).toVar();
     const distanceToCenter = centeredUv.length();
     const angle = atan(centeredUv.y, centeredUv.x);
     const radialUv = vec2(angle.add(PI).div(TWO_PI), distanceToCenter).toVar();
+
     radialUv.mulAssign(multiplier);
     radialUv.x.addAssign(rotation);
     radialUv.y.addAssign(offset);
+
     return radialUv;
   });
 
-  const toSkewedUv = Fn(([uv, skew]) => {
-    return vec2(uv.x.add(uv.y.mul(skew.x)), uv.y.add(uv.x.mul(skew.y)));
+  const toSkewedUv = Fn((inputs: [any, any]) => {
+    const [inputUv, skew] = inputs;
+    return vec2(inputUv.x.add(inputUv.y.mul(skew.x)), inputUv.y.add(inputUv.x.mul(skew.y)));
   });
 
-  const twistedCylinder = Fn(([position, parabolStrength, parabolOffset, parabolAmplitude, time]) => {
+  const twistedCylinder = Fn((inputs: [any, any, any, any, any]) => {
+    const [position, parabolStrength, parabolOffset, parabolAmplitude, elapsedTime] = inputs;
     const angle = atan(position.z, position.x).toVar();
     const elevation = position.y;
     const radius = parabolStrength.mul(position.y.sub(parabolOffset)).pow(2).add(parabolAmplitude).toVar();
-    radius.addAssign(sin(elevation.sub(time).mul(20).add(angle.mul(2))).mul(0.05));
-    const twistedPosition = vec3(cos(angle).mul(radius), elevation, sin(angle).mul(radius));
-    return twistedPosition;
+
+    radius.addAssign(sin(elevation.sub(elapsedTime).mul(20).add(angle.mul(2))).mul(0.05));
+
+    return vec3(cos(angle).mul(radius), elevation, sin(angle).mul(radius));
   });
 
-  // Uniforms — color fijo, velocidad fija
+  return { toRadialUv, toSkewedUv, twistedCylinder };
+};
+
+const createTornadoMeshes = (perlinTexture: any, shaderFns: ReturnType<typeof createShaderFunctions>): any[] => {
   const emissiveColor = uniform(color("#8A63FF"));
   const timeScale = uniform(0.1);
   const parabolStrength = uniform(1);
   const parabolOffset = uniform(0.3);
   const parabolAmplitude = uniform(0.2);
 
-  // tornado floor
-  const floorMaterial = new THREE.MeshBasicNodeMaterial({ transparent: true, wireframe: false });
+  const { toRadialUv, toSkewedUv, twistedCylinder } = shaderFns;
+
+  const floorMaterial = new THREE.MeshBasicNodeMaterial({
+    transparent: true,
+    wireframe: false,
+  });
 
   floorMaterial.outputNode = Fn(() => {
     const scaledTime = time.mul(timeScale);
@@ -119,12 +130,10 @@ function init() {
 
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), floorMaterial);
   floor.rotation.x = -Math.PI * 0.5;
-  scene.add(floor);
 
   const cylinderGeometry = new THREE.CylinderGeometry(1, 1, 1, 20, 20, true);
   cylinderGeometry.translate(0, 0.5, 0);
 
-  // emissive cylinder
   const emissiveMaterial = new THREE.MeshBasicNodeMaterial({
     transparent: true,
     side: THREE.DoubleSide,
@@ -162,9 +171,7 @@ function init() {
   })();
 
   const emissive = new THREE.Mesh(cylinderGeometry, emissiveMaterial);
-  scene.add(emissive);
 
-  // dark cylinder
   const darkMaterial = new THREE.MeshBasicNodeMaterial({
     transparent: true,
     side: THREE.DoubleSide,
@@ -201,70 +208,114 @@ function init() {
   })();
 
   const dark = new THREE.Mesh(cylinderGeometry, darkMaterial);
-  scene.add(dark);
 
-  // renderer
-  const canvas = document.getElementById("canvas");
+  return [floor, emissive, dark];
+};
 
-  renderer = new THREE.WebGPURenderer({ antialias: true, canvas });
+const createScrollProgressReader = (): (() => number) => {
+  let scrollProgress = 0;
+
+  const lenis = new Lenis({ autoRaf: true });
+  lenis.on("scroll", ({ progress }) => {
+    scrollProgress = progress;
+  });
+
+  return () => scrollProgress;
+};
+
+const createRuntime = (canvas: HTMLCanvasElement): SceneRuntime => {
+  const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 50);
+  camera.position.set(1, 1, 3);
+
+  const scene = new THREE.Scene();
+
+  const textureLoader = new THREE.TextureLoader();
+  const perlinTexture = createNoiseTexture(textureLoader);
+
+  const shaderFns = createShaderFunctions();
+  const tornadoMeshes = createTornadoMeshes(perlinTexture, shaderFns);
+  tornadoMeshes.forEach((mesh) => scene.add(mesh));
+
+  const renderer = new THREE.WebGPURenderer({ antialias: true, canvas });
   renderer.setClearColor(0x201919);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.inspector = new Inspector();
 
-  // post processing
-  renderPipeline = new THREE.RenderPipeline(renderer);
-
+  const renderPipeline = new THREE.RenderPipeline(renderer);
   const scenePass = pass(scene, camera);
   const scenePassColor = scenePass.getTextureNode("output");
   const bloomPass = bloom(scenePassColor, 1, 0.1, 1);
   renderPipeline.outputNode = scenePassColor.add(bloomPass);
 
-  // controls — siguen funcionando con mouse normalmente
-  controls = new OrbitControls(camera, renderer.domElement);
+  const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 0.4, 0);
   controls.enableDamping = true;
   controls.minDistance = 0.1;
   controls.maxDistance = 50;
 
-  window.addEventListener("resize", onWindowResize);
+  return {
+    camera,
+    renderer,
+    renderPipeline,
+    controls,
+    currentCameraPosition: new THREE.Vector3(1, 1, 3),
+    currentCameraTarget: new THREE.Vector3(0, 0.4, 0),
+    getScrollProgress: createScrollProgressReader(),
+  };
+};
 
-  renderer.setAnimationLoop(animate);
-}
+const resizeRenderer = (runtime: SceneRuntime): void => {
+  runtime.camera.aspect = window.innerWidth / window.innerHeight;
+  runtime.camera.updateProjectionMatrix();
+  runtime.renderer.setSize(window.innerWidth, window.innerHeight);
+};
 
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
+const getInterpolatedCameraKeyframe = (progress: number): CameraKeyframe => {
+  const segmentCount = CAMERA_KEYFRAMES.length - 1;
+  const scaledProgress = progress * segmentCount;
+  const baseIndex = Math.floor(scaledProgress);
+  const interpolationFactor = scaledProgress - baseIndex;
 
-function getLerpedKeyframe(progress) {
-  const count = cameraKeyframes.length - 1;
-  const scaled = progress * count; // ej: progress 0.5 con 4 keyframes → 1.5
-  const index = Math.floor(scaled); // keyframe base → 1
-  const t = scaled - index; // fracción entre keyframes → 0.5
-
-  const from = cameraKeyframes[Math.min(index, count)];
-  const to = cameraKeyframes[Math.min(index + 1, count)];
+  const from = CAMERA_KEYFRAMES[Math.min(baseIndex, segmentCount)];
+  const to = CAMERA_KEYFRAMES[Math.min(baseIndex + 1, segmentCount)];
 
   return {
-    position: new THREE.Vector3().lerpVectors(from.position, to.position, t),
-    target: new THREE.Vector3().lerpVectors(from.target, to.target, t),
+    position: new THREE.Vector3().lerpVectors(from.position, to.position, interpolationFactor),
+    target: new THREE.Vector3().lerpVectors(from.target, to.target, interpolationFactor),
   };
-}
+};
 
-function animate() {
-  const keyframe = getLerpedKeyframe(scrollProgress);
+const startAnimationLoop = (runtime: SceneRuntime): void => {
+  runtime.renderer.setAnimationLoop(() => {
+    const keyframe = getInterpolatedCameraKeyframe(runtime.getScrollProgress());
 
-  // Lerp suavizado hacia la posición objetivo del keyframe
-  currentCamPos.lerp(keyframe.position, 0.05);
-  currentCamTarget.lerp(keyframe.target, 0.05);
+    runtime.currentCameraPosition.lerp(keyframe.position, CAMERA_SMOOTHING);
+    runtime.currentCameraTarget.lerp(keyframe.target, CAMERA_SMOOTHING);
 
-  // Aplicar a la cámara y a OrbitControls
-  camera.position.copy(currentCamPos);
-  controls.target.copy(currentCamTarget);
+    runtime.camera.position.copy(runtime.currentCameraPosition);
+    runtime.controls.target.copy(runtime.currentCameraTarget);
 
-  controls.update();
-  renderPipeline.render();
-}
+    runtime.controls.update();
+    runtime.renderPipeline.render();
+  });
+};
+
+const initTornadoScene = (): void => {
+  const canvasElement = document.getElementById("canvas");
+
+  if (!(canvasElement instanceof HTMLCanvasElement)) {
+    return;
+  }
+
+  const runtime = createRuntime(canvasElement);
+
+  window.addEventListener("resize", () => {
+    resizeRenderer(runtime);
+  });
+
+  startAnimationLoop(runtime);
+};
+
+initTornadoScene();

@@ -13,7 +13,7 @@ export default defineConfig({
       name: "DM Sans",
       provider: fontProviders.google(),
       cssVariable: "--font-dm-sans",
-      weights: [400, 500, 700],
+      weights: [300, 400, 500, 700],
       subsets: ["latin"],
       styles: ["normal"],
       display: "swap",

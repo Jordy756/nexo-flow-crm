@@ -3,27 +3,9 @@
     "title": "NexoFlow CRM | Conversaciones que cierran ventas",
     "description": "CRM inteligente para startups con WhatsApp y email nativos, automatizaciones de seguimiento y paneles de metricas en tiempo real."
   },
-  "brand": {
+  "basics": {
     "name": "NexoFlow CRM",
-    "tagline": "Menos friccion. Mas cierres.",
-    "description": "Convierte conversaciones en ingresos con un CRM colaborativo y asincronico, pensado para equipos de startup.",
-    "primaryCta": {
-      "label": "Solicitar demo",
-      "href": "#cta"
-    },
-    "secondaryCta": {
-      "label": "Ver arquitectura",
-      "href": "#features"
-    }
-  },
-  "nav": [
-    { "label": "Funciones", "href": "#features" },
-    { "label": "Integraciones", "href": "#integrations" },
-    { "label": "Metricas", "href": "#metrics" }
-  ],
-  "hero": {
-    "eyebrow": "Startup CRM",
-    "title": "Tu pipeline vive donde tu equipo conversa",
+    "title": "Menos friccion. Mas cierres.",
     "highlight": "WhatsApp + Email + Automatizacion",
     "description": "Gestiona leads activos y clientes en seguimiento en una sola bandeja. Etiqueta, segmenta y automatiza cada contacto sin perder contexto.",
     "stats": [
@@ -166,16 +148,16 @@
   ],
   "faq": [
     {
-      "q": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
-      "a": "Si. NexoFlow CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
+      "question": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
+      "answer": "Si. NexoFlow CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
     },
     {
-      "q": "Que tan rapido es implementar WhatsApp y correo?",
-      "a": "La configuracion guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
+      "question": "Que tan rapido es implementar WhatsApp y correo?",
+      "answer": "La configuracion guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
     },
     {
-      "q": "Puedo exportar datos para reportes internos?",
-      "a": "Si. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
+      "question": "Puedo exportar datos para reportes internos?",
+      "answer": "Si. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
     }
   ],
   "cta": {
@@ -183,13 +165,5 @@
     "description": "Entrega un prototipo funcional con flujos de usuario, panel de metricas y base para documentar endpoints e instalacion.",
     "primary": { "label": "Empezar prueba", "href": "#" },
     "secondary": { "label": "Hablar con ventas", "href": "#" }
-  },
-  "footer": {
-    "legal": "NexoFlow CRM. Hecho para equipos de startups.",
-    "links": [
-      { "label": "Privacidad", "href": "#" },
-      { "label": "Terminos", "href": "#" },
-      { "label": "Documentacion API", "href": "#" }
-    ]
   }
 }

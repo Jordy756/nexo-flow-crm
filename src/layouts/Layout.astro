@@ -11,7 +11,7 @@ const { title, description = "CRM inteligente para conversaciones y seguimiento"
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-pt-32">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -22,12 +22,11 @@ const { title, description = "CRM inteligente para conversaciones y seguimiento"
     <title>{title}</title>
     <Font cssVariable="--font-dm-sans" preload />
 
-    <script src="../scripts/config/lenis.ts"></script>
-    <script src="./prueba.js"></script>
+    <script src="../scripts/scenes/tornadoScene.ts"></script>
   </head>
   <body class="bg-neutral-950 text-neutral-50 text-pretty">
-    <div id="root" class="relative flex flex-col gap-12 min-h-dvh overflow-clip items-center">
-      <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
+    <div id="root" class="relative flex flex-col gap-32 min-h-dvh overflow-clip items-center">
+      <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/30">
         <canvas id="canvas" class="w-full h-full"></canvas>
       </div>
       <slot />
