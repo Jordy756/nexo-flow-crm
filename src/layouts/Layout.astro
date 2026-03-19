@@ -4,14 +4,14 @@ import { Font } from "astro:assets";
 
 interface Props {
   title: string;
-  description?: string;
+  description: string;
 }
 
-const { title, description = "CRM inteligente para conversaciones y seguimiento" } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-pt-32">
+<html lang="es" class="scroll-pt-32 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -21,14 +21,9 @@ const { title, description = "CRM inteligente para conversaciones y seguimiento"
 
     <title>{title}</title>
     <Font cssVariable="--font-dm-sans" preload />
-
-    <script src="../scripts/scenes/tornadoScene.ts"></script>
   </head>
   <body class="bg-neutral-950 text-neutral-50 text-pretty">
     <div id="root" class="relative flex flex-col gap-32 min-h-dvh overflow-clip items-center">
-      <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/30">
-        <canvas id="canvas" class="w-full h-full"></canvas>
-      </div>
       <slot />
     </div>
   </body>

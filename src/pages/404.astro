@@ -1,0 +1,28 @@
+---
+import Footer from "@components/layout/Footer.astro";
+import Header from "@components/layout/Header.astro";
+import Link from "@components/ui/Link.astro";
+import Layout from "@layouts/Layout.astro";
+
+const title = "404 | Página no encontrada";
+const description = "La página que buscas no existe.";
+---
+
+<Layout title={title} description={description}>
+  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/50">
+    <video src="/videos/hero.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
+  </div>
+  <Header />
+  <main class="flex-1 min-h-[50vh]">
+    <section class="flex flex-col items-center gap-8">
+      <header>
+        <h1 class="text-9xl">404</h1>
+        <p>La página que buscas no existe.</p>
+      </header>
+      <div>
+        <Link href="/">Volver al inicio</Link>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

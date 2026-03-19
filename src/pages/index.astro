@@ -5,13 +5,17 @@ import Features from "@components/sections/features/Features.astro";
 import Hero from "@components/sections/hero/Hero.astro";
 import Integrations from "@components/sections/integrations/Integrations.astro";
 import Plans from "@components/sections/plans/Plans.astro";
-import { seo } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 
-const { title, description } = seo;
+const title = "NexoFlow CRM | Conversaciones que cierran ventas";
+const description =
+  "CRM inteligente para startups con WhatsApp y email nativos, automatizaciones de seguimiento y paneles de metricas en tiempo real.";
 ---
 
 <Layout title={title} description={description}>
+  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/30">
+    <canvas id="canvas" class="w-full h-full"></canvas>
+  </div>
   <Header />
   <main class="flex-1 flex flex-col items-center gap-32 w-full">
     <Hero />
@@ -24,4 +28,6 @@ const { title, description } = seo;
     <!-- </div> -->
   </main>
   <Footer />
+
+  <!-- <script src="../scripts/scenes/tornadoScene.ts"></script> -->
 </Layout>
