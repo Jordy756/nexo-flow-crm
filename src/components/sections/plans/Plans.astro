@@ -3,12 +3,15 @@ import { plans } from "@data/data.json";
 import PlanCard from "./PlanCard.astro";
 ---
 
-<section id="plans" class="flex flex-col gap-12 w-[min(1160px,100%)]">
-  <header class="flex flex-col items-center gap-2 text-center">
+<section
+  id="plans"
+  class="relative flex flex-col items-center gap-12 w-full after:absolute after:inset-0 after:bg-linear-to-b after:from-neutral-950 after:to-transparent after:-z-10"
+>
+  <header class="flex flex-col items-center gap-2 text-center w-[min(1160px,100%)]">
     <h2 class="text-5xl">Plans that grow with you.</h2>
     <p>Flexible pricing for teams of every size and stage. Upgrade, downgrade, or cancel anytime.</p>
   </header>
-  <div class="flex gap-4">
+  <div class="flex gap-4 w-[min(1160px,100%)]">
     {
       plans.map(({ name, description, price, features, isPrincipal }) => (
         <PlanCard name={name} description={description} price={price} features={features} isPrincipal={isPrincipal} />
