@@ -9,7 +9,7 @@ import FAQItem from "./FAQItem.astro";
       <h2 class="text-6xl max-w-[15ch] font-medium">Preguntas Frecuentes</h2>
     </header>
     <div class="flex-[1.5]">
-      {faqs.map(({ question, answer }) => <FAQItem name="faqs" question={question} answer={answer} />)}
+      {faqs.map((faq) => <FAQItem name="faqs" faq={faq} />)}
     </div>
   </div>
 </section>

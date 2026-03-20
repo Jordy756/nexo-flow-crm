@@ -1,11 +1,14 @@
 ---
 interface Props {
-  question: string;
-  answer: string;
+  faq: {
+    question: string;
+    answer: string;
+  };
   name?: string;
 }
 
-const { name, question, answer } = Astro.props;
+const { faq, name } = Astro.props;
+const { question, answer } = faq;
 ---
 
 <details name={name} class="border-b border-neutral-50">

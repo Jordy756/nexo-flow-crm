@@ -1,8 +1,8 @@
 {
   "basics": {
     "name": "NexoFlow CRM",
-    "title": "Menos friccion. Mas cierres.",
-    "highlight": "WhatsApp + Email + Automatizacion",
+    "title": "Menos fricción. Más cierres.",
+    "highlight": "WhatsApp + Email + Automatización",
     "description": "Gestiona leads activos y clientes en seguimiento en una sola bandeja. Etiqueta, segmenta y automatiza cada contacto sin perder contexto.",
     "stats": [
       { "label": "Tasa de respuesta", "value": "+34%" },
@@ -12,7 +12,7 @@
     "socialNetworks": [
       {
         "network": "Whatsapp",
-        "url": "https://wa.me/50688888888?text=Hola%20NexoFlow%2C%20quiero%20saber%20mas%20sobre%20el%20CRM"
+        "url": "https://wa.me/50688888888?text=Hola%20NexoFlow%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20CRM"
       },
       {
         "network": "Facebook",
@@ -24,114 +24,10 @@
       }
     ]
   },
-  "features": [
-    {
-      "title": "Gestion de contactos",
-      "description": "Segmentacion por estado del funnel",
-      "items": [
-        "Vistas para leads activos y clientes en seguimiento.",
-        "Filtros guardados por equipo comercial y soporte.",
-        "Etiquetas personalizadas por canal, fuente y prioridad."
-      ]
-    },
-    {
-      "title": "Comunicacion nativa",
-      "description": "WhatsApp Cloud API + Email SMTP/Brevo",
-      "items": [
-        "Envio y registro de emails con historial por contacto.",
-        "Bandeja colaborativa en tiempo real y asincronica.",
-        "Plantillas y snippets para respuestas rapidas."
-      ]
-    },
-    {
-      "title": "Automatizacion",
-      "description": "Seguimientos que no se olvidan",
-      "items": [
-        "Recordatorios de tareas por SLA o inactividad.",
-        "Disparadores por cambio de estado del funnel.",
-        "Secuencias de follow-up multicanal sin codigo."
-      ]
-    },
-    {
-      "title": "Analitica accionable",
-      "description": "Panel de KPIs para crecimiento",
-      "items": [
-        "Contactos activos, mensajes enviados y tasa de respuesta.",
-        "Exportaciones en CSV o PDF para reportes.",
-        "Comparativas por canal, segmento y agente."
-      ]
-    }
-  ],
-  "plans": [
-    {
-      "name": "Starter",
-      "description": "Kick off your project with core features for individuals and small teams.",
-      "features": [
-        "Up to 3 users",
-        "Essential dashboard",
-        "Basic task management",
-        "Real-time chat",
-        "1 GB secure storage"
-      ],
-      "isPrincipal": false
-    },
-    {
-      "name": "Pro",
-      "description": "More power for growing teams ready to move faster.",
-      "price": {
-        "amount": 49.99,
-        "period": "month"
-      },
-      "features": [
-        "Up to 3 users",
-        "Essential dashboard",
-        "Basic task management",
-        "Real-time chat",
-        "1 GB secure storage"
-      ],
-      "isPrincipal": true
-    },
-    {
-      "name": "Enterprise",
-      "description": "Kick off your project with core features for individuals and small teams.",
-      "price": {
-        "amount": 99.99,
-        "period": "month"
-      },
-      "features": [
-        "Up to 3 users",
-        "Essential dashboard",
-        "Basic task management",
-        "Real-time chat",
-        "1 GB secure storage"
-      ],
-      "isPrincipal": false
-    }
-  ],
-  "segments": [
-    {
-      "name": "Leads activos",
-      "description": "Prioriza prospectos con alta intencion y ejecuta secuencias de contacto en las primeras 24 horas.",
-      "bullets": [
-        "Scoring por engagement en WhatsApp/email",
-        "Alertas de oportunidad caliente",
-        "Vista Kanban por etapa comercial"
-      ]
-    },
-    {
-      "name": "Clientes en seguimiento",
-      "description": "Mantiene renovaciones, upsell y soporte en una vista operativa sin friccion.",
-      "bullets": [
-        "Recordatorios por vencimientos y tareas",
-        "Etiquetas por salud de cuenta",
-        "Automatizaciones para expansion de cartera"
-      ]
-    }
-  ],
   "integrations": [
     {
       "name": "WhatsApp Cloud API",
-      "description": "Envia y recibe mensajes con trazabilidad completa por contacto.",
+      "description": "Envía y recibe mensajes con trazabilidad completa por contacto.",
       "tag": "Oficial Meta"
     },
     {
@@ -141,41 +37,130 @@
     },
     {
       "name": "Export CSV / PDF",
-      "description": "Comparte resultados con finanzas, ventas y direccion en segundos.",
+      "description": "Comparte resultados con finanzas, ventas y dirección en segundos.",
       "tag": "Datos listos"
     }
   ],
-  "workflow": [
-    "Captura y segmenta el contacto por canal y etapa.",
-    "Activa seguimiento automatico segun reglas del funnel.",
-    "Mide respuesta, avance y conversion en un tablero unico."
+  "features": [
+    {
+      "title": "Gestión",
+      "description": "Centraliza leads activos y clientes en seguimiento en una sola vista operativa, con filtros guardados, etiquetas por prioridad y trazabilidad por canal para que cada conversación avance con intención y sin pérdida de historial.",
+      "image": {
+        "url": "/images/hero_dashboard_img.png",
+        "alt": "Panel con contactos segmentados, etiquetas y estado del embudo"
+      },
+      "cta": {
+        "href": "/#plans",
+        "target": "_self",
+        "label": "Ver planes"
+      }
+    },
+    {
+      "title": "Comunicación",
+      "description": "Unifica WhatsApp Cloud API y correo en una bandeja colaborativa para responder más rápido con plantillas, snippets y registro completo por contacto, manteniendo sincronía entre ventas, soporte y seguimiento comercial.",
+      "image": {
+        "url": "/images/hero_dashboard_img.png",
+        "alt": "Bandeja unificada de WhatsApp y correo para equipos"
+      },
+      "cta": {
+        "href": "https://wa.me/50688888888",
+        "target": "_blank",
+        "label": "Solicitar demo"
+      }
+    },
+    {
+      "title": "Automatizaciones",
+      "description": "Configura recordatorios por SLA, disparadores por cambio de etapa y secuencias multicanal sin código para que tu equipo no dependa de memoria manual, reduzca tiempos muertos y sostenga un seguimiento constante en todo el embudo.",
+      "image": {
+        "url": "/images/hero_dashboard_img.png",
+        "alt": "Flujo de automatizaciones con tareas y disparadores"
+      },
+      "cta": {
+        "href": "/#integrations",
+        "target": "_self",
+        "label": "Ver integraciones"
+      }
+    },
+    {
+      "title": "Analítica",
+      "description": "Visualiza rendimiento por canal, agente y segmento con métricas claras, exportaciones en CSV o PDF y señales de oportunidad para decidir más rápido, detectar cuellos de botella y mejorar la tasa de respuesta de forma sostenida.",
+      "image": {
+        "url": "/images/hero_dashboard_img.png",
+        "alt": "Métricas de rendimiento y reportes exportables del CRM"
+      },
+      "cta": {
+        "href": "/#faqs",
+        "target": "_self",
+        "label": "Resolver dudas"
+      }
+    }
   ],
-  "kpis": [
-    { "label": "Contactos activos", "value": "12,480", "trend": "+18% mensual" },
-    { "label": "Mensajes enviados", "value": "84,220", "trend": "+31% mensual" },
-    { "label": "Tasa de respuesta", "value": "67%", "trend": "+9 pts" },
-    { "label": "Seguimientos automatizados", "value": "41,900", "trend": "2.4x eficiencia" }
+  "plans": [
+    {
+      "name": "Starter",
+      "description": "Comienza con las funciones clave para personas independientes y equipos pequeños.",
+      "features": [
+        "Hasta 3 usuarios",
+        "Panel esencial",
+        "Gestión básica de tareas",
+        "Chat en tiempo real",
+        "1 GB de almacenamiento seguro"
+      ],
+      "isPrincipal": false
+    },
+    {
+      "name": "Pro",
+      "description": "Más capacidad para equipos en crecimiento que necesitan avanzar con velocidad.",
+      "price": {
+        "amount": 49.99,
+        "period": "mes"
+      },
+      "features": [
+        "Hasta 10 usuarios",
+        "Panel avanzado",
+        "Automatizaciones de seguimiento",
+        "Chat en tiempo real",
+        "20 GB de almacenamiento seguro"
+      ],
+      "isPrincipal": true
+    },
+    {
+      "name": "Enterprise",
+      "description": "Solución integral para operaciones complejas con soporte prioritario y personalización.",
+      "price": {
+        "amount": 99.99,
+        "period": "mes"
+      },
+      "features": [
+        "Usuarios ilimitados",
+        "Panel ejecutivo",
+        "Automatizaciones avanzadas",
+        "Integraciones personalizadas",
+        "Almacenamiento escalable"
+      ],
+      "isPrincipal": false
+    }
   ],
   "faqs": [
     {
-      "question": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
-      "answer": "Si. NexoFlow CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
+      "question": "¿Se puede usar por equipos de ventas y soporte al mismo tiempo?",
+      "answer": "Sí. NexoFlow CRM está pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
     },
     {
-      "question": "Que tan rapido es implementar WhatsApp y correo?",
-      "answer": "La configuracion guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
+      "question": "¿Qué tan rápido es implementar WhatsApp y correo?",
+      "answer": "La configuración guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
     },
     {
-      "question": "Puedo exportar datos para reportes internos?",
-      "answer": "Si. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
+      "question": "¿Puedo exportar datos para reportes internos?",
+      "answer": "Sí. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
     },
     {
-      "question": "Que tipo de automatizaciones puedo crear sin codigo?",
+      "question": "¿Qué tipo de automatizaciones puedo crear sin código?",
       "answer": "Puedes configurar recordatorios, alertas y secuencias multicanal basadas en cambios de estado o inactividad."
     },
     {
-      "question": "Como se comparan los planes y precios?",
-      "answer": "El plan Starter es ideal para individuos, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalizacion."
+      "question": "¿Cómo se comparan los planes y precios?",
+      "answer": "El plan Starter es ideal para personas independientes, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalización."
     }
   ]
 }
