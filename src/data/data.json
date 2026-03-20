@@ -142,7 +142,7 @@
     { "label": "Tasa de respuesta", "value": "67%", "trend": "+9 pts" },
     { "label": "Seguimientos automatizados", "value": "41,900", "trend": "2.4x eficiencia" }
   ],
-  "faq": [
+  "faqs": [
     {
       "question": "Se puede usar por equipos de ventas y soporte al mismo tiempo?",
       "answer": "Si. NexoFlow CRM esta pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
@@ -154,6 +154,14 @@
     {
       "question": "Puedo exportar datos para reportes internos?",
       "answer": "Si. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
+    },
+    {
+      "question": "Que tipo de automatizaciones puedo crear sin codigo?",
+      "answer": "Puedes configurar recordatorios, alertas y secuencias multicanal basadas en cambios de estado o inactividad."
+    },
+    {
+      "question": "Como se comparan los planes y precios?",
+      "answer": "El plan Starter es ideal para individuos, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalizacion."
     }
   ],
   "cta": {
