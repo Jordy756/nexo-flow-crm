@@ -8,6 +8,20 @@
       { "label": "Tasa de respuesta", "value": "+34%" },
       { "label": "Tiempo de seguimiento", "value": "-42%" },
       { "label": "Mensajes por agente", "value": "3.1k" }
+    ],
+    "socialNetworks": [
+      {
+        "network": "Whatsapp",
+        "url": "https://wa.me/50688888888?text=Hola%20NexoFlow%2C%20quiero%20saber%20mas%20sobre%20el%20CRM"
+      },
+      {
+        "network": "Facebook",
+        "url": "https://www.facebook.com/nexoflowcrm"
+      },
+      {
+        "network": "Instagram",
+        "url": "https://www.instagram.com/nexoflowcrm"
+      }
     ]
   },
   "features": [
@@ -163,11 +177,5 @@
       "question": "Como se comparan los planes y precios?",
       "answer": "El plan Starter es ideal para individuos, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalizacion."
     }
-  ],
-  "cta": {
-    "title": "Centraliza conversaciones, automatiza seguimiento y escala tu CRM",
-    "description": "Entrega un prototipo funcional con flujos de usuario, panel de metricas y base para documentar endpoints e instalacion.",
-    "primary": { "label": "Empezar prueba", "href": "#" },
-    "secondary": { "label": "Hablar con ventas", "href": "#" }
-  }
+  ]
 }

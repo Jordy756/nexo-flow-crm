@@ -1,6 +1,17 @@
 ---
+import WhatsappIcon from "@components/icons/Whatsapp.astro";
+import FacebookIcon from "@components/icons/Facebook.astro";
+import InstagramIcon from "@components/icons/Instagram.astro";
 import { Image } from "astro:assets";
+import { basics } from "@data/data.json";
 
+const SOCIAL_NETWORKS: Record<string, string | any> = {
+  Whatsapp: WhatsappIcon,
+  Facebook: FacebookIcon,
+  Instagram: InstagramIcon,
+};
+
+const { name, socialNetworks } = basics;
 const year = new Date().getFullYear();
 
 const footerLinks = [
@@ -49,7 +60,27 @@ const footerLinks = [
     </nav>
   </section>
   <div class="w-[min(var(--max-width),100%)] h-px bg-neutral-800"></div>
-  <section class="w-[min(var(--max-width),100%)]">
-    <p class="">&copy; {year} NexoFlow CRM. Hecho para equipos de startups.</p>
+  <section class="w-[min(var(--max-width),100%)] flex justify-between items-center gap-8">
+    <span class="">&copy; {year} {name}. Hecho para equipos de startups.</span>
+    <ul class="flex items-center gap-4">
+      {
+        socialNetworks.map(({ network, url }) => {
+          const Icon = SOCIAL_NETWORKS[network];
+          return (
+            <li>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Seguir a ${name} en ${network}`}
+                title={`Seguir a ${name} en ${network}`}
+              >
+                <Icon width={24} color="var(--neutral-50)" />
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
   </section>
 </footer>
