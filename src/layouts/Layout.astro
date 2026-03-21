@@ -23,7 +23,7 @@ const { title, description } = Astro.props;
     <Font cssVariable="--font-dm-sans" preload />
   </head>
   <body class="bg-neutral-950 text-neutral-50 text-pretty text-lg font-light">
-    <div id="root" class="relative flex flex-col gap-32 min-h-dvh overflow-clip items-center">
+    <div id="root" class="relative flex flex-col items-center gap-8 min-h-dvh overflow-clip md:gap-32">
       <slot />
     </div>
   </body>

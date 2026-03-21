@@ -8,20 +8,20 @@ import { Image } from "astro:assets";
 const { highlight, title, description } = basics;
 ---
 
-<section class="relative flex flex-col items-center w-full">
-  <div class="relative flex flex-col items-center gap-32 w-[min(var(--max-width),100%)]">
+<section class="relative flex flex-col items-center w-full px-4">
+  <div class="relative flex flex-col items-center gap-8 w-[min(var(--max-width),100%)] md:gap-32">
     <article class="flex flex-col gap-4 items-center text-center">
       <Badge>
         <StarsIcon width={16} class="text-neutral-50" />
         {highlight}
       </Badge>
-      <h2 class="text-7xl font-semibold max-w-[15ch] flex flex-col">
+      <h2 class="text-5xl font-semibold max-w-[15ch] flex flex-col sm:text-7xl">
         {title}
       </h2>
       <p class="max-w-[70ch]">{description}</p>
       <div class="flex flex-wrap items-center justify-center gap-4">
-        <Link href="/#plans" variant="secondary">Ver planes</Link>
-        <Link href="https://google.com" target="_blank">Solicitar demo</Link>
+        <Link href="/#plans" variant="secondary" class="flex-1">Ver planes</Link>
+        <Link href="https://google.com" target="_blank" class="flex-1">Solicitar demo</Link>
       </div>
     </article>
     <figure class="flex w-[min(1260px,100%)]">
