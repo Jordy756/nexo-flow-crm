@@ -91,7 +91,8 @@ const createShaderFunctions = () => {
 };
 
 const createTornadoMeshes = (perlinTexture: any, shaderFns: ReturnType<typeof createShaderFunctions>): any[] => {
-  const emissiveColor = uniform(color("#8A63FF"));
+  // 2CADE0 - 8A63FF - E51A56
+  const emissiveColor = uniform(color("#2CADE0"));
   const timeScale = uniform(0.1);
   const parabolStrength = uniform(1);
   const parabolOffset = uniform(0.3);

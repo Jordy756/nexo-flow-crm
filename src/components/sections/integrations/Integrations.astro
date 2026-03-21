@@ -1,31 +1,48 @@
 ---
+import BrevoIcon from "@components/icons/Brevo.astro";
+import GmailIcon from "@components/icons/Gmail.astro";
+import PDFIcon from "@components/icons/PDF.astro";
+import WhatsappIcon from "@components/icons/Whatsapp.astro";
+import IntegrationCard from "./IntegrationCard.astro";
+import Badge from "@components/ui/Badge.astro";
+import StarsIcon from "@components/icons/Stars.astro";
+import Link from "@components/ui/Link.astro";
 
+const integrations = [
+  [null, null, null, null, null, null, null, GmailIcon, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, WhatsappIcon, BrevoIcon, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, PDFIcon, null, null, null, null, null, null, null],
+];
 ---
 
 <section
   id="integrations"
-  class="relative flex flex-col items-center gap-12 w-full
+  class="relative flex flex-col items-center gap-20 w-full
     after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-neutral-950 after:-z-10"
 >
-  <header class="flex flex-col items-center gap-2 text-center w-[min(1160px,100%)]">
-    <h2 class="text-5xl">Your all-in-one SaaS engine.</h2>
-    <p class="max-w-[70ch]">
-      Tools, security, and integrations — everything you need to launch and scale, zero hassle.
-    </p>
-  </header>
-  <div class="flex items-center gap-4 w-[min(1160px,100%)]">
+  <div class="flex flex-col items-center w-[min(1160px,100%)]">
     {
-      Array.from({ length: 3 }).map(() => (
-        <article class="flex-1 bg-glass border border-neutral-800 p-8 rounded-2xl flex flex-col gap-32">
-          <header>
-            <figure class="w-24 h-24 bg-neutral-50 rounded-full" />
-          </header>
-          <section>
-            <h3>Ironclad Protection</h3>
-            <p>Safeguard your data with encryption and real-time monitoring.</p>
-          </section>
-        </article>
+      integrations.map((integration) => (
+        <div class="flex gap-16">
+          {integration.map((item) => (
+            <IntegrationCard integration={item} />
+          ))}
+        </div>
       ))
     }
   </div>
+  <footer class="flex flex-col items-center gap-4 w-[min(1160px,100%)]">
+    <Badge>
+      <StarsIcon width={16} class="text-neutral-50" />
+      Más de 100 integraciones disponibles
+    </Badge>
+    <div class="flex flex-col items-center gap-2 text-center">
+      <h2 class="text-5xl max-w-[30ch]">Conecta tus herramientas favoritas con facilidad</h2>
+      <p class="max-w-[70ch]">
+        Nuestra plataforma se integra sin problemas con una amplia variedad de aplicaciones y servicios populares, lo
+        que te permite conectar tus herramientas favoritas y optimizar tu flujo de trabajo.
+      </p>
+    </div>
+    <Link href="/integrations" class="mt-4">Explorar Más</Link>
+  </footer>
 </section>

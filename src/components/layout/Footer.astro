@@ -47,7 +47,7 @@ const footerLinks = [
             <h2 class="text-lg font-medium">{section.title}</h2>
             <ul class="flex flex-col gap-2">
               {section.links.map((item) => (
-                <li class="opacity-80">
+                <li class="opacity-80 text-base">
                   <a href={item.href} class="transition hover:text-cyan-200">
                     {item.label}
                   </a>
@@ -61,7 +61,7 @@ const footerLinks = [
   </section>
   <div class="w-[min(var(--max-width),100%)] h-px bg-neutral-800"></div>
   <section class="w-[min(var(--max-width),100%)] flex justify-between items-center gap-8">
-    <span class="">&copy; {year} {name}. Hecho para equipos de startups.</span>
+    <span class="text-base">&copy; {year} {name}. Hecho para equipos de startups.</span>
     <ul class="flex items-center gap-4">
       {
         socialNetworks.map(({ network, url }) => {

@@ -1,0 +1,17 @@
+---
+interface Props {
+  integration: ((props: Record<string, unknown>) => unknown) | null;
+}
+
+const { integration } = Astro.props;
+const Icon = integration;
+---
+
+<article
+  class:list={[
+    "flex bg-glass border border-neutral-800 p-8 rounded-md rotate-45",
+    integration === null && "opacity-80",
+  ]}
+>
+  {Icon ? <Icon width={48} height={48} class="-rotate-45" /> : <div class="w-12 h-12" />}
+</article>

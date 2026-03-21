@@ -24,7 +24,7 @@ const { name, description, price, features, isPrincipal } = Astro.props;
 >
   <header class="flex flex-col gap-4">
     <h3 class="text-3xl font-medium">{name}</h3>
-    <p class="text-sm">{description}</p>
+    <p class="text-base">{description}</p>
   </header>
   <section class="flex-1 flex flex-col gap-8">
     {
@@ -40,8 +40,8 @@ const { name, description, price, features, isPrincipal } = Astro.props;
     <ul class="flex flex-col gap-1">
       {
         features.map((feature) => (
-          <li class="flex items-center gap-2">
-            <CheckIcon width={20} class="text-neutral-50" />
+          <li class="flex items-center gap-2 text-base">
+            <CheckIcon width={20} class="text-neutral-50 " />
             {feature}
           </li>
         ))

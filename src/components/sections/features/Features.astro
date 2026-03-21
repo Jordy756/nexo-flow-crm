@@ -9,12 +9,6 @@ import { features } from "@data/data.json";
   before:absolute before:bottom-full before:bg-neutral-950 before:w-full before:h-32
   after:absolute after:top-full after:bg-neutral-950 after:w-full after:h-32"
 >
-  <header class="flex flex-col items-center gap-2 text-center w-[min(1160px,100%)]">
-    <h2 class="text-5xl">Funciones para cerrar más y mejor.</h2>
-    <p class="max-w-[70ch]">
-      Todo lo clave en un solo lugar: gestión comercial, seguimiento, automatizaciones y análisis accionable.
-    </p>
-  </header>
   <div class="flex flex-col items-center gap-20 w-[min(1160px,100%)]">
     {features.map((feature, index) => <FeatureCard feature={feature} reverse={index % 2 !== 0} />)}
   </div>

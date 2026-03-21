@@ -1,5 +1,5 @@
 ---
-import FeatureIcon from "@components/icons/Feature.astro";
+import StarsIcon from "@components/icons/Stars.astro";
 import Badge from "@components/ui/Badge.astro";
 import Link from "@components/ui/Link.astro";
 import { basics } from "@data/data.json";
@@ -12,7 +12,7 @@ const { highlight, title, description } = basics;
   <div class="relative flex flex-col items-center gap-32 w-[min(var(--max-width),100%)]">
     <article class="flex flex-col gap-4 items-center text-center">
       <Badge>
-        <FeatureIcon width={16} class="text-neutral-50" />
+        <StarsIcon width={16} class="text-neutral-50" />
         {highlight}
       </Badge>
       <h2 class="text-7xl font-semibold max-w-[15ch] flex flex-col">
