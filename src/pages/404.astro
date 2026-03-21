@@ -9,15 +9,12 @@ const description = "La página que buscas no existe.";
 ---
 
 <Layout title={title} description={description}>
-  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/25">
-    <video src="/videos/hero.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
-  </div>
+  <video src="/videos/hero.mp4" muted autoplay loop class="fixed inset-0 w-full h-full object-cover -z-10"></video>
   <Header />
-  <main class="flex-1 min-h-[50vh]">
+  <main class="flex-1 min-h-[calc(100vh-350px)] flex items-center justify-center">
     <section class="flex flex-col items-center gap-8">
       <header>
-        <h1 class="text-9xl">404</h1>
-        <p>La página que buscas no existe.</p>
+        <h1 class="text-9xl font-bold md:text-[20rem] sm:text-[15rem] xl:text-[25rem]">404</h1>
       </header>
       <div>
         <Link href="/">Volver al inicio</Link>

@@ -24,23 +24,6 @@
       }
     ]
   },
-  "integrations": [
-    {
-      "name": "WhatsApp Cloud API",
-      "description": "Envía y recibe mensajes con trazabilidad completa por contacto.",
-      "tag": "Oficial Meta"
-    },
-    {
-      "name": "SMTP / Brevo",
-      "description": "Gestiona campañas y correos 1:1 con plantillas y etiquetas.",
-      "tag": "Motor de correo"
-    },
-    {
-      "name": "Export CSV / PDF",
-      "description": "Comparte resultados con finanzas, ventas y dirección en segundos.",
-      "tag": "Datos listos"
-    }
-  ],
   "features": [
     {
       "title": "Gestión",
