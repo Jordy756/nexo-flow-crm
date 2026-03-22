@@ -8,8 +8,10 @@ import { Image } from "astro:assets";
 const { highlight, title, description } = basics;
 ---
 
-<section class="relative flex flex-col items-center w-full px-4">
-  <div class="relative flex flex-col items-center gap-8 w-[min(var(--max-width),100%)] md:gap-32">
+<section class="relative flex flex-col items-center w-full">
+  <div
+    class="relative flex flex-col items-center gap-32 w-[min(var(--max-width),100%)] after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-neutral-950 after:-z-10"
+  >
     <article class="flex flex-col gap-4 items-center text-center">
       <Badge>
         <StarsIcon width={16} class="text-neutral-50" />

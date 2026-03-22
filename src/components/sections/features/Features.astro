@@ -9,6 +9,10 @@ import { features } from "@data/data.json";
   before:absolute before:bottom-full before:bg-neutral-950 before:w-full before:h-32
   after:absolute after:top-full after:bg-neutral-950 after:w-full after:h-32"
 >
+  <header class="flex flex-col items-center gap-2 text-center w-[min(1160px,100%)]">
+    <h2 class="text-5xl">Plans that grow with you.</h2>
+    <p>Flexible pricing for teams of every size and stage. Upgrade, downgrade, or cancel anytime.</p>
+  </header>
   <div class="flex flex-col items-center gap-20 w-[min(1160px,100%)]">
     {features.map((feature, index) => <FeatureCard feature={feature} reverse={index % 2 !== 0} />)}
   </div>
