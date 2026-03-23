@@ -29,6 +29,10 @@
 }
 
 @layer base {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
   html {
     scrollbar-width: thin;
   }
