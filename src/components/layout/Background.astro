@@ -6,6 +6,6 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<video class:list={["fixed inset-0 object-cover -z-10", className]} muted autoplay loop>
+<video class:list={["fixed top-0 left-0 w-full h-full object-cover -z-10", className]} muted autoplay loop>
   <source src="/videos/hero.mp4" />
 </video>
