@@ -1,5 +1,6 @@
 ---
 import "@styles/global.css";
+import "lenis/dist/lenis.css";
 import { Font } from "astro:assets";
 
 interface Props {
@@ -17,10 +18,13 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+
+    <Font cssVariable="--font-dm-sans" preload />
+
     <meta name="description" content={description} />
 
-    <title>{title}</title>
-    <Font cssVariable="--font-dm-sans" preload />
+    <script src="../scripts/config/lenis.ts"></script>
   </head>
   <body class="bg-neutral-950 text-neutral-50 text-pretty text-lg font-light">
     <div id="root" class="relative flex flex-col items-center gap-8 min-h-dvh overflow-clip md:gap-32">
