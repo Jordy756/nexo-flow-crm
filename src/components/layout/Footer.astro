@@ -1,9 +1,9 @@
 ---
-import WhatsappIcon from "@components/icons/Whatsapp.astro";
 import FacebookIcon from "@components/icons/Facebook.astro";
 import InstagramIcon from "@components/icons/Instagram.astro";
-import { Image } from "astro:assets";
+import WhatsappIcon from "@components/icons/Whatsapp.astro";
 import { basics } from "@data/data.json";
+import { Image } from "astro:assets";
 
 const SOCIAL_NETWORKS: Record<string, string | any> = {
   Whatsapp: WhatsappIcon,
@@ -35,7 +35,7 @@ const footerLinks = [
 ---
 
 <footer class="flex flex-col items-center gap-6 w-full p-4 py-16 bg-neutral-950">
-  <section class="w-[min(var(--max-width),100%)] flex flex-col items-center gap-8 sm:flex-row sm:justify-between sm:gap-16">
+  <section class="w-[min(var(--max-width),100%)] flex flex-col gap-8 sm:flex-row sm:justify-between sm:gap-16">
     <div class="flex flex-col items-center gap-4 sm:items-start">
       <Image src="/hero-chat.svg" alt={"Logo"} width={150} height={50} />
       <p class="text-lg font-medium text-center sm:text-start">{title}</p>

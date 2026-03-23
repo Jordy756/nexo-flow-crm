@@ -29,7 +29,7 @@
       "title": "Gestión",
       "description": "Centraliza leads activos y clientes en seguimiento en una sola vista operativa, con filtros guardados, etiquetas por prioridad y trazabilidad por canal para que cada conversación avance con intención y sin pérdida de historial.",
       "image": {
-        "url": "/images/hero_dashboard_img.png",
+        "url": "/hero-dashboard.svg",
         "alt": "Panel con contactos segmentados, etiquetas y estado del embudo"
       },
       "cta": {
@@ -42,7 +42,7 @@
       "title": "Comunicación",
       "description": "Unifica WhatsApp Cloud API y correo en una bandeja colaborativa para responder más rápido con plantillas, snippets y registro completo por contacto, manteniendo sincronía entre ventas, soporte y seguimiento comercial.",
       "image": {
-        "url": "/images/hero_dashboard_img.png",
+        "url": "/hero-dashboard.svg",
         "alt": "Bandeja unificada de WhatsApp y correo para equipos"
       },
       "cta": {
@@ -55,7 +55,7 @@
       "title": "Automatizaciones",
       "description": "Configura recordatorios por SLA, disparadores por cambio de etapa y secuencias multicanal sin código para que tu equipo no dependa de memoria manual, reduzca tiempos muertos y sostenga un seguimiento constante en todo el embudo.",
       "image": {
-        "url": "/images/hero_dashboard_img.png",
+        "url": "/hero-dashboard.svg",
         "alt": "Flujo de automatizaciones con tareas y disparadores"
       },
       "cta": {
@@ -68,7 +68,7 @@
       "title": "Analítica",
       "description": "Visualiza rendimiento por canal, agente y segmento con métricas claras, exportaciones en CSV o PDF y señales de oportunidad para decidir más rápido, detectar cuellos de botella y mejorar la tasa de respuesta de forma sostenida.",
       "image": {
-        "url": "/images/hero_dashboard_img.png",
+        "url": "/hero-dashboard.svg",
         "alt": "Métricas de rendimiento y reportes exportables del CRM"
       },
       "cta": {

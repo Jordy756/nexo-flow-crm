@@ -1,4 +1,5 @@
 ---
+import Background from "@components/layout/Background.astro";
 import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
 import FAQ from "@components/sections/faq/FAQ.astro";
@@ -14,13 +15,7 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/35">
-    <video src="/videos/hero.mp4" muted autoplay loop class="w-full h-full object-cover"></video>
-  </div>
-  <div class="fixed inset-0 -z-10 before:absolute before:inset-0 before:bg-black/25">
-    <canvas id="canvas" class="w-full h-full"></canvas>
-  </div>
-
+  <Background class="brightness-50" />
   <Header />
   <main class="flex-1 flex flex-col items-center gap-8 w-full md:gap-32">
     <Hero />
@@ -30,6 +25,4 @@ const description =
     <FAQ />
   </main>
   <Footer />
-
-  <!-- <script src="../scripts/scenes/tornadoScene.ts"></script> -->
 </Layout>
