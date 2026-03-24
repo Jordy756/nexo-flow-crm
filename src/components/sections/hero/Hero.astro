@@ -5,20 +5,21 @@ import Link from "@components/ui/Link.astro";
 import { basics } from "@data/data.json";
 import { Image } from "astro:assets";
 
-const { highlight, title, description } = basics;
+const { badge, title, description } = basics;
 ---
 
 <section class="flex flex-col items-center gap-8 px-4 w-[min(var(--max-width),100%)] md:gap-32">
   <article class="flex flex-col gap-8 items-center">
     <Badge>
       <StarsIcon width={16} class="text-neutral-50" />
-      {highlight}
+      {badge}
     </Badge>
     <div class="flex flex-col items-center gap-2 text-center">
-      <h2 class="text-5xl font-semibold max-w-[15ch] flex flex-col sm:text-7xl">
+      <h1 class="sr-only">CRM con WhatsApp y Email para equipos de ventas</h1>
+      <h2 class="text-5xl font-bold max-w-[15ch] flex flex-col sm:text-7xl">
         {title}
       </h2>
-      <p class="max-w-[70ch] font-normal">{description}</p>
+      <p class="max-w-[50ch] font-normal">{description}</p>
     </div>
     <div class="flex flex-wrap items-center justify-center gap-4">
       <Link href="/#plans" variant="secondary" class="flex-1">Ver planes</Link>
@@ -27,7 +28,7 @@ const { highlight, title, description } = basics;
   </article>
   <figure class="flex w-[min(1260px,100%)]">
     <Image
-      src="/images/hero_dashboard_img.png"
+      src="/images/hero_dashboard_img.webp"
       width={1160}
       height={650}
       alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"

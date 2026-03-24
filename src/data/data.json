@@ -1,8 +1,8 @@
 {
   "basics": {
-    "name": "NexoFlow CRM",
+    "name": "Nexo CRM",
     "title": "Menos fricción. Más cierres.",
-    "highlight": "WhatsApp + Email + Automatización",
+    "badge": "WhatsApp + Email + Automatización",
     "description": "Gestiona leads activos y clientes en seguimiento en una sola bandeja. Etiqueta, segmenta y automatiza cada contacto sin perder contexto.",
     "stats": [
       { "label": "Tasa de respuesta", "value": "+34%" },
@@ -24,126 +24,142 @@
       }
     ]
   },
-  "features": [
-    {
-      "title": "Gestión",
-      "description": "Centraliza leads activos y clientes en seguimiento en una sola vista operativa, con filtros guardados, etiquetas por prioridad y trazabilidad por canal para que cada conversación avance con intención y sin pérdida de historial.",
-      "image": {
-        "url": "/hero-dashboard.svg",
-        "alt": "Panel con contactos segmentados, etiquetas y estado del embudo"
-      },
-      "cta": {
-        "href": "/#plans",
-        "target": "_self",
-        "label": "Ver planes"
-      }
+  "sections": {
+    "integrations": {
+      "badge": "Integraciones listas para usar",
+      "title": "Conecta tus herramientas favoritas con facilidad",
+      "description": "Integra WhatsApp, correo y tus flujos clave en pocos pasos para trabajar desde un solo lugar."
     },
-    {
-      "title": "Comunicación",
-      "description": "Unifica WhatsApp Cloud API y correo en una bandeja colaborativa para responder más rápido con plantillas, snippets y registro completo por contacto, manteniendo sincronía entre ventas, soporte y seguimiento comercial.",
-      "image": {
-        "url": "/hero-dashboard.svg",
-        "alt": "Bandeja unificada de WhatsApp y correo para equipos"
-      },
-      "cta": {
-        "href": "https://wa.me/50688888888",
-        "target": "_blank",
-        "label": "Solicitar demo"
-      }
+    "features": {
+      "items": [
+        {
+          "title": "Management",
+          "description": "Centraliza leads activos y clientes en seguimiento en una sola vista operativa, con filtros guardados, etiquetas por prioridad y trazabilidad por canal para que cada conversación avance con intención y sin pérdida de historial.",
+          "image": {
+            "url": "/images/feature-management.svg",
+            "alt": "CRM management board with segmented contacts, labels, and funnel status"
+          },
+          "cta": {
+            "href": "/#plans",
+            "target": "_self",
+            "label": "Ver planes"
+          }
+        },
+        {
+          "title": "Communication",
+          "description": "Unifica WhatsApp Cloud API y correo en una bandeja colaborativa para responder más rápido con plantillas, snippets y registro completo por contacto, manteniendo sincronía entre ventas, soporte y seguimiento comercial.",
+          "image": {
+            "url": "/images/feature-communication.svg",
+            "alt": "Unified inbox for WhatsApp and email collaboration"
+          },
+          "cta": {
+            "href": "https://wa.me/50688888888",
+            "target": "_blank",
+            "label": "Solicitar demo"
+          }
+        },
+        {
+          "title": "Automation",
+          "description": "Configura recordatorios por SLA, disparadores por cambio de etapa y secuencias multicanal sin código para que tu equipo no dependa de memoria manual, reduzca tiempos muertos y sostenga un seguimiento constante en todo el embudo.",
+          "image": {
+            "url": "/images/feature-automation.svg",
+            "alt": "Automation workflow with triggers, tasks, and follow-ups"
+          },
+          "cta": {
+            "href": "/#integrations",
+            "target": "_self",
+            "label": "Ver integraciones"
+          }
+        },
+        {
+          "title": "Analytics",
+          "description": "Visualiza rendimiento por canal, agente y segmento con métricas claras, exportaciones en CSV o PDF y señales de oportunidad para decidir más rápido, detectar cuellos de botella y mejorar la tasa de respuesta de forma sostenida.",
+          "image": {
+            "url": "/images/feature-analytics.svg",
+            "alt": "CRM analytics dashboard with KPIs and exportable reports"
+          },
+          "cta": {
+            "href": "/#faqs",
+            "target": "_self",
+            "label": "Resolver dudas"
+          }
+        }
+      ]
     },
-    {
-      "title": "Automatizaciones",
-      "description": "Configura recordatorios por SLA, disparadores por cambio de etapa y secuencias multicanal sin código para que tu equipo no dependa de memoria manual, reduzca tiempos muertos y sostenga un seguimiento constante en todo el embudo.",
-      "image": {
-        "url": "/hero-dashboard.svg",
-        "alt": "Flujo de automatizaciones con tareas y disparadores"
-      },
-      "cta": {
-        "href": "/#integrations",
-        "target": "_self",
-        "label": "Ver integraciones"
-      }
+    "plans": {
+      "title": "Planes que crecen con tu equipo",
+      "description": "Opciones claras para empezar, escalar y operar con mayor control según tu etapa.",
+      "items": [
+        {
+          "name": "Starter",
+          "description": "Comienza con las funciones clave para personas independientes y equipos pequeños.",
+          "features": [
+            "Hasta 3 usuarios",
+            "Panel esencial",
+            "Gestión básica de tareas",
+            "Chat en tiempo real",
+            "1 GB de almacenamiento seguro"
+          ],
+          "isPrincipal": false
+        },
+        {
+          "name": "Pro",
+          "description": "Más capacidad para equipos en crecimiento que necesitan avanzar con velocidad.",
+          "price": {
+            "amount": 49.99,
+            "period": "mes"
+          },
+          "features": [
+            "Hasta 10 usuarios",
+            "Panel avanzado",
+            "Automatizaciones de seguimiento",
+            "Chat en tiempo real",
+            "20 GB de almacenamiento seguro"
+          ],
+          "isPrincipal": true
+        },
+        {
+          "name": "Enterprise",
+          "description": "Solución integral para operaciones complejas con soporte prioritario y personalización.",
+          "price": {
+            "amount": 99.99,
+            "period": "mes"
+          },
+          "features": [
+            "Usuarios ilimitados",
+            "Panel ejecutivo",
+            "Automatizaciones avanzadas",
+            "Integraciones personalizadas",
+            "Almacenamiento escalable"
+          ],
+          "isPrincipal": false
+        }
+      ]
     },
-    {
-      "title": "Analítica",
-      "description": "Visualiza rendimiento por canal, agente y segmento con métricas claras, exportaciones en CSV o PDF y señales de oportunidad para decidir más rápido, detectar cuellos de botella y mejorar la tasa de respuesta de forma sostenida.",
-      "image": {
-        "url": "/hero-dashboard.svg",
-        "alt": "Métricas de rendimiento y reportes exportables del CRM"
-      },
-      "cta": {
-        "href": "/#faqs",
-        "target": "_self",
-        "label": "Resolver dudas"
-      }
+    "faqs": {
+      "title": "Resolvemos tus dudas",
+      "items": [
+        {
+          "question": "¿Se puede usar por equipos de ventas y soporte al mismo tiempo?",
+          "answer": "Sí. NexoFlow CRM está pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
+        },
+        {
+          "question": "¿Qué tan rápido es implementar WhatsApp y correo?",
+          "answer": "La configuración guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
+        },
+        {
+          "question": "¿Puedo exportar datos para reportes internos?",
+          "answer": "Sí. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
+        },
+        {
+          "question": "¿Qué tipo de automatizaciones puedo crear sin código?",
+          "answer": "Puedes configurar recordatorios, alertas y secuencias multicanal basadas en cambios de estado o inactividad."
+        },
+        {
+          "question": "¿Cómo se comparan los planes y precios?",
+          "answer": "El plan Starter es ideal para personas independientes, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalización."
+        }
+      ]
     }
-  ],
-  "plans": [
-    {
-      "name": "Starter",
-      "description": "Comienza con las funciones clave para personas independientes y equipos pequeños.",
-      "features": [
-        "Hasta 3 usuarios",
-        "Panel esencial",
-        "Gestión básica de tareas",
-        "Chat en tiempo real",
-        "1 GB de almacenamiento seguro"
-      ],
-      "isPrincipal": false
-    },
-    {
-      "name": "Pro",
-      "description": "Más capacidad para equipos en crecimiento que necesitan avanzar con velocidad.",
-      "price": {
-        "amount": 49.99,
-        "period": "mes"
-      },
-      "features": [
-        "Hasta 10 usuarios",
-        "Panel avanzado",
-        "Automatizaciones de seguimiento",
-        "Chat en tiempo real",
-        "20 GB de almacenamiento seguro"
-      ],
-      "isPrincipal": true
-    },
-    {
-      "name": "Enterprise",
-      "description": "Solución integral para operaciones complejas con soporte prioritario y personalización.",
-      "price": {
-        "amount": 99.99,
-        "period": "mes"
-      },
-      "features": [
-        "Usuarios ilimitados",
-        "Panel ejecutivo",
-        "Automatizaciones avanzadas",
-        "Integraciones personalizadas",
-        "Almacenamiento escalable"
-      ],
-      "isPrincipal": false
-    }
-  ],
-  "faqs": [
-    {
-      "question": "¿Se puede usar por equipos de ventas y soporte al mismo tiempo?",
-      "answer": "Sí. NexoFlow CRM está pensado para trabajo colaborativo entre roles con permisos, vistas y filtros personalizados."
-    },
-    {
-      "question": "¿Qué tan rápido es implementar WhatsApp y correo?",
-      "answer": "La configuración guiada conecta WhatsApp Cloud API y SMTP/Brevo en minutos, con plantillas listas para usar."
-    },
-    {
-      "question": "¿Puedo exportar datos para reportes internos?",
-      "answer": "Sí. Puedes exportar contactos, actividades y KPIs en CSV o PDF por rango de fechas y segmento."
-    },
-    {
-      "question": "¿Qué tipo de automatizaciones puedo crear sin código?",
-      "answer": "Puedes configurar recordatorios, alertas y secuencias multicanal basadas en cambios de estado o inactividad."
-    },
-    {
-      "question": "¿Cómo se comparan los planes y precios?",
-      "answer": "El plan Starter es ideal para personas independientes, Pro para equipos en crecimiento y Enterprise para necesidades avanzadas y personalización."
-    }
-  ]
+  }
 }
