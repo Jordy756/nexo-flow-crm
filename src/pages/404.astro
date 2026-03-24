@@ -14,12 +14,9 @@ const description = "La página que buscas no existe.";
   <Header />
   <main class="flex-1 min-h-[calc(100vh-350px)] flex items-center justify-center">
     <section class="flex flex-col items-center gap-8">
-      <header>
-        <h1 class="text-9xl font-bold md:text-[20rem] sm:text-[15rem] xl:text-[25rem]">404</h1>
-      </header>
-      <div>
-        <Link href="/">Volver al inicio</Link>
-      </div>
+      <h1 class="sr-only">404 — Página no encontrada</h1>
+      <p aria-hidden="true" class="text-9xl font-bold md:text-[20rem] sm:text-[15rem] xl:text-[25rem]">404</p>
+      <Link href="/">Volver al inicio</Link>
     </section>
   </main>
   <Footer />

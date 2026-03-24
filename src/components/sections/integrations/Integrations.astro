@@ -17,20 +17,9 @@ const integrations = [
 
 <section
   id="integrations"
-  class="relative flex flex-col items-center gap-20 w-full px-4 after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-neutral-950 after:-z-10"
+  class="relative flex flex-col-reverse items-center gap-16 w-full px-4 after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:to-neutral-950 after:-z-10"
 >
-  <div class="flex flex-col items-center w-[min(1160px,100%)]">
-    {
-      integrations.map((integration) => (
-        <div class="flex gap-16">
-          {integration.map((item) => (
-            <IntegrationCard integration={item} />
-          ))}
-        </div>
-      ))
-    }
-  </div>
-  <footer class="flex flex-col items-center gap-4 w-[min(1160px,100%)]">
+  <header class="flex flex-col items-center gap-4 w-[min(1160px,100%)]">
     <Badge>
       <StarsIcon width={16} class="text-neutral-50" />
       Más de 100 integraciones disponibles
@@ -43,5 +32,16 @@ const integrations = [
       </p>
     </div>
     <Link href="/integrations" class="mt-4">Explorar Más</Link>
-  </footer>
+  </header>
+  <div class="flex flex-col items-center w-[min(1160px,100%)] py-5">
+    {
+      integrations.map((integration) => (
+        <div class="flex gap-16">
+          {integration.map((item) => (
+            <IntegrationCard integration={item} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
 </section>
