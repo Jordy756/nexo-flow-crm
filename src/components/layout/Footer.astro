@@ -41,13 +41,13 @@ const footerLinks = [
       <a href="/#" class="transition-opacity hover:opacity-80">
         <Logo width={131.25} height={32} class="h-16" />
       </a>
-      <p class="text-lg font-medium text-center sm:text-start">{title}</p>
+      <p class="font-normal text-center sm:text-start">{title}</p>
     </div>
     <nav class="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-16 sm:text-left">
       {
         footerLinks.map((section) => (
           <div class="flex flex-col gap-4">
-            <h2 class="text-lg font-medium">{section.title}</h2>
+            <h2>{section.title}</h2>
             <ul class="flex flex-col gap-2">
               {section.links.map((item) => (
                 <li class="opacity-80 text-base">

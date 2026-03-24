@@ -18,7 +18,7 @@ const { question, answer } = faq;
   details-content:[transition:content-visibility_500ms_allow-discrete,height_500ms]
   open:details-content:h-auto"
 >
-  <summary class="flex items-center justify-between gap-4 cursor-pointer px-4 py-4 font-medium">
+  <summary class="flex items-center justify-between gap-4 cursor-pointer px-4 py-4 font-normal">
     {question}
 
     <div
@@ -31,6 +31,6 @@ const { question, answer } = faq;
   </summary>
 
   <div class="p-4 pt-0 flex justify-end">
-    <p class="md:w-1/2">{answer}</p>
+    <p class="md:w-1/2 text-base">{answer}</p>
   </div>
 </details>
