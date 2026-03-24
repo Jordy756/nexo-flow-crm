@@ -1,4 +1,5 @@
 ---
+import ArrowUp from "@components/icons/ArrowUp.astro";
 import Background from "@components/layout/Background.astro";
 import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
@@ -17,12 +18,17 @@ const description =
 <Layout title={title} description={description}>
   <Background class="brightness-50" />
   <Header />
-  <main class="flex-1 flex flex-col items-center w-full gap-32">
+  <main class="relative flex-1 flex flex-col items-center w-full gap-32">
     <Hero />
     <Integrations />
     <Features />
     <Plans />
     <FAQ />
+    <div class="p-4 w-[min(var(--max-width),100%)] absolute -bottom-26 flex justify-end">
+      <a href="#" class="flex bg-neutral-50 rounded-full p-3 transition-opacity hover:opacity-80">
+        <ArrowUp width={24} class="text-neutral-950" />
+      </a>
+    </div>
   </main>
   <Footer />
 </Layout>

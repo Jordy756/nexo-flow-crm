@@ -1,5 +1,5 @@
 ---
-import ArrowIcon from "@components/icons/Arrow.astro";
+import ArrowOutwardIcon from "@components/icons/ArrowOutward.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"button"> {
@@ -19,6 +19,6 @@ const { variant = "primary", class: className, ...rest } = Astro.props;
 >
   <slot />
   <div class:list={["p-1 rounded-full flex", variant === "primary" && "bg-neutral-950"]}>
-    <ArrowIcon width={20} class="text-neutral-50" />
+    <ArrowOutwardIcon width={20} class="text-neutral-50" />
   </div>
 </button>
