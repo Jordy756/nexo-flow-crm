@@ -12,7 +12,7 @@
     "socialNetworks": [
       {
         "network": "Whatsapp",
-        "url": "https://wa.me/50688888888?text=Hola%20NexoFlow%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20CRM"
+        "url": "https://wa.me/50688888888"
       },
       {
         "network": "Facebook",
@@ -212,7 +212,7 @@
           "title": "Duración, terminación y ley aplicable",
           "paragraphs": [
             "Puedes dejar de usar la plataforma en cualquier momento y solicitar cierre de cuenta conforme al proceso de soporte. Nexo CRM también podrá suspender o terminar accesos cuando exista incumplimiento relevante, riesgo de seguridad, fraude o mandato legal, procurando preservar evidencia y trazabilidad para una gestión ordenada del caso.",
-            "Estos términos se rigen por las leyes de la República de Costa Rica. Antes de iniciar acciones formales, las partes intentarán resolver cualquier controversia mediante negociación de buena fe durante un plazo razonable. Si no se alcanza acuerdo, la disputa se someterá a los tribunales competentes de San José, salvo pacto escrito distinto entre las partes."
+            "Estos términos se interpretarán conforme a la legislación aplicable del país o jurisdicción que corresponda según la relación contractual con cada cliente. Antes de iniciar acciones formales, las partes intentarán resolver cualquier controversia mediante negociación de buena fe durante un plazo razonable. Si no se alcanza acuerdo, la disputa se someterá a los tribunales competentes de la jurisdicción aplicable, salvo pacto escrito distinto entre las partes."
           ]
         }
       ]
