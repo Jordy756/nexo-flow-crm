@@ -4,7 +4,6 @@ import InstagramIcon from "@components/icons/Instagram.astro";
 import WhatsappIcon from "@components/icons/Whatsapp.astro";
 import Logo from "@components/ui/Logo.astro";
 import { basics } from "@data/data.json";
-import { Image } from "astro:assets";
 
 const SOCIAL_NETWORKS: Record<string, string | any> = {
   Whatsapp: WhatsappIcon,
@@ -19,8 +18,8 @@ const footerLinks = [
   {
     title: "Empresa",
     links: [
-      { label: "Funciones", href: "/#functions" },
       { label: "Integraciones", href: "/#integrations" },
+      { label: "Funciones", href: "/#features" },
       { label: "Planes", href: "/#plans" },
       { label: "FAQ", href: "/#faqs" },
     ],
