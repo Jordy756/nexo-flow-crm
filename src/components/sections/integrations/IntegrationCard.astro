@@ -1,12 +1,25 @@
 ---
+interface Integration {
+  icon: ((props: Record<string, unknown>) => unknown) | null;
+  delay: number;
+  title: string;
+}
+
 interface Props {
-  integration: ((props: Record<string, unknown>) => unknown) | null;
+  integration: Integration | null;
 }
 
 const { integration } = Astro.props;
-const Icon = integration;
+const { icon: Icon, delay, title } = !integration ? { icon: null, delay: 0, title: "" } : integration;
+const animationDelay = `-${delay}s`;
 ---
 
-<article class:list={["flex rotate-45 rounded-md bg-glass p-8", integration === null && "opacity-60"]}>
-  {Icon ? <Icon width={48} height={48} class="-rotate-45" /> : <div class="h-12 w-12" />}
+<article class:list={["flex rotate-45 rounded-md bg-glass p-8", integration === null && "opacity-60"]} title={title}>
+  {
+    Icon ? (
+      <Icon style={{ animationDelay }} width={48} height={48} class="-rotate-45 animate-integrations-flip" />
+    ) : (
+      <div class="h-12 w-12" />
+    )
+  }
 </article>

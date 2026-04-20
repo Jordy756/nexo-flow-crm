@@ -6,6 +6,7 @@
 
   /* Animations */
   --animate-hero-scale: hero-scale linear both;
+  --animate-integrations-flip: flip-horizontal 5s ease-in-out infinite alternate;
 
   @keyframes hero-scale {
     from {
@@ -13,6 +14,15 @@
     }
     to {
       transform: scale(1) translateY(0%);
+    }
+  }
+
+  @keyframes flip-horizontal {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
     }
   }
 }
@@ -34,7 +44,7 @@
 }
 
 @utility bg-glass {
-  @apply bg-[#141414]/20 backdrop-blur-[10px];
+  @apply bg-[#141414]/20 backdrop-blur-md;
 }
 
 @layer base {

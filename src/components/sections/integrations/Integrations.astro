@@ -10,9 +10,58 @@ import { sections } from "@data/data.json";
 import IntegrationCard from "./IntegrationCard.astro";
 
 const integrations = [
-  [null, null, null, null, null, null, null, GmailIcon, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, WhatsappIcon, BrevoIcon, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, PDFIcon, null, null, null, null, null, null, null],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    { icon: GmailIcon, delay: 0, title: "Gmail" },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    { icon: WhatsappIcon, delay: 3, title: "Whatsapp" },
+    { icon: BrevoIcon, delay: 6, title: "Brevo" },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    { icon: PDFIcon, delay: 9, title: "PDF" },
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ],
 ];
 
 const { integrations: integrationsSection } = sections;
@@ -38,7 +87,7 @@ const { badge, title, description } = integrationsSection;
     {
       integrations.map((integration) => (
         <div class="flex gap-16">
-          {integration.map((item) => (
+          {integration.map((item, index) => (
             <IntegrationCard integration={item} />
           ))}
         </div>
