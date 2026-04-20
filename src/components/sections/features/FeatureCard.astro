@@ -25,13 +25,13 @@ const { title, description, image, cta } = feature;
 
 <article
   class:list={[
-    "flex flex-col gap-4 w-full md:flex-row md:items-center md:justify-between",
+    "flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between",
     reverse && "md:flex-row-reverse",
   ]}
 >
   <header class="flex flex-1 flex-col items-start gap-2">
-    <h3 class="text-3xl max-w-[20ch]">{title}</h3>
-    <p class="max-w-[50ch] mb-2">{description}</p>
+    <h3 class="max-w-[20ch] text-3xl">{title}</h3>
+    <p class="mb-2 max-w-[50ch]">{description}</p>
     <Link href={cta.href} target={cta.target}>{cta.label}</Link>
   </header>
   <figure class="flex-1">
@@ -40,7 +40,7 @@ const { title, description, image, cta } = feature;
       width={100}
       height={100}
       alt={image.alt}
-      class:list={["w-full h-auto md:max-w-md", !reverse && "md:ml-auto"]}
+      class:list={["h-auto w-full md:max-w-md", !reverse && "md:ml-auto"]}
     />
   </figure>
 </article>

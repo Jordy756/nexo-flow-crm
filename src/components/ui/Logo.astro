@@ -12,4 +12,10 @@ const { name } = basics;
 const { class: className, width, height } = Astro.props;
 ---
 
-<Image src="/logo.webp" alt={`Logo de ${name}`} width={width} height={height} class:list={["w-full h-8 object-contain", className]} />
+<Image
+  src="/logo.webp"
+  alt={`Logo de ${name}`}
+  width={width}
+  height={height}
+  class:list={["h-8 w-full object-contain", className]}
+/>

@@ -18,15 +18,15 @@ const { name, description, price, features, isPrincipal } = Astro.props;
 
 <article
   class:list={[
-    "flex-1 flex flex-col gap-8 min-h-125 p-8 bg-glass border rounded-2xl",
-    isPrincipal ? "lg:-translate-y-4 border-neutral-700" : "border-neutral-900",
+    "flex min-h-125 flex-1 flex-col gap-8 rounded-2xl border bg-glass p-8",
+    isPrincipal ? "border-neutral-700 lg:-translate-y-4" : "border-neutral-900",
   ]}
 >
   <header class="flex flex-col gap-4">
     <h3 class="text-3xl font-normal">{name}</h3>
     <p class="text-base">{description}</p>
   </header>
-  <section class="flex-1 flex flex-col gap-8">
+  <section class="flex flex-1 flex-col gap-8">
     {
       price ? (
         <p>
@@ -41,7 +41,7 @@ const { name, description, price, features, isPrincipal } = Astro.props;
       {
         features.map((feature) => (
           <li class="flex items-center gap-2 text-base">
-            <CheckIcon width={20} class="text-neutral-50 " />
+            <CheckIcon width={20} class="text-neutral-50" />
             {feature}
           </li>
         ))

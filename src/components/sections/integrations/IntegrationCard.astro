@@ -7,6 +7,6 @@ const { integration } = Astro.props;
 const Icon = integration;
 ---
 
-<article class:list={["flex bg-glass p-8 rounded-md rotate-45", integration === null && "opacity-60"]}>
-  {Icon ? <Icon width={48} height={48} class="-rotate-45" /> : <div class="w-12 h-12" />}
+<article class:list={["flex rotate-45 rounded-md bg-glass p-8", integration === null && "opacity-60"]}>
+  {Icon ? <Icon width={48} height={48} class="-rotate-45" /> : <div class="h-12 w-12" />}
 </article>
