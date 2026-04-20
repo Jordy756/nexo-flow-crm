@@ -11,7 +11,9 @@ const { index, policy } = Astro.props;
 const { title, paragraphs } = policy;
 ---
 
-<article class="flex flex-col gap-4">
+<article
+  class="flex flex-col gap-4 supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
+>
   <h2 class="text-3xl">
     {index + 1}. {title}
   </h2>

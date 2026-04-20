@@ -29,12 +29,26 @@ const { title, description, image, cta } = feature;
     reverse && "md:flex-row-reverse",
   ]}
 >
-  <header class="flex flex-1 flex-col items-start gap-2">
+  <header
+    class:list={[
+      "flex flex-1 flex-col items-start gap-2",
+      "supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view",
+      "supports-view-timeline:max-md:animate-fade-in-up",
+      reverse ? "supports-view-timeline:md:animate-fade-in-left" : "supports-view-timeline:md:animate-fade-in-right",
+    ]}
+  >
     <h3 class="max-w-[20ch] text-3xl">{title}</h3>
     <p class="mb-2 max-w-[50ch]">{description}</p>
     <Link href={cta.href} target={cta.target}>{cta.label}</Link>
   </header>
-  <figure class="flex-1">
+  <figure
+    class:list={[
+      "flex-1",
+      "supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view",
+      "supports-view-timeline:max-md:animate-fade-in-up",
+      reverse ? "supports-view-timeline:md:animate-fade-in-right" : "supports-view-timeline:md:animate-fade-in-left",
+    ]}
+  >
     <Image
       src={image.url}
       width={100}

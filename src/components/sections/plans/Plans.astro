@@ -10,7 +10,9 @@ const { title, description, items } = plansSection;
   id="plans"
   class="relative flex w-full flex-col items-center gap-16 px-4 after:absolute after:inset-0 after:-z-10 after:bg-linear-to-b after:from-neutral-950 after:to-transparent"
 >
-  <header class="flex w-[min(1160px,100%)] flex-col items-center gap-2 text-center">
+  <header
+    class="flex w-[min(1160px,100%)] flex-col items-center gap-2 text-center supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
+  >
     <h2 class="text-5xl">{title}</h2>
     <p>{description}</p>
   </header>
