@@ -6,12 +6,13 @@ import { basics } from "@data/data.json";
 import { Image } from "astro:assets";
 
 const { badge, title, description } = basics;
-const requestDemoLink =
-  "https://wa.me/50688888888?text=Hola%20NexoFlow%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20CRM";
+const requestDemoLink = "https://jordy756-minimalist-portfolio.vercel.app/";
 ---
 
-<section class="flex w-[min(var(--max-width),100%)] flex-col items-center gap-8 px-4 md:gap-32">
-  <article class="flex animate-fade-in-up flex-col items-center gap-8 animate-delay-3000">
+<section class="flex min-h-screen w-[min(var(--max-width),100%)] flex-col items-center gap-8 px-4 sm:gap-32">
+  <article
+    class="mt-27.5 flex flex-1 animate-fade-in-up flex-col items-center justify-center gap-8 animate-delay-3000 sm:mt-55.5"
+  >
     <Badge>
       <StarsIcon width={16} class="text-neutral-50" />
       {badge}
@@ -28,13 +29,13 @@ const requestDemoLink =
       <Link href={requestDemoLink} target="_blank" class="flex-1">Solicitar demo</Link>
     </div>
   </article>
-  <figure class="flex w-full animate-fade-in-up flex-col animate-delay-3400">
+  <figure class="relative flex h-full w-full animate-fade-in-up flex-col animate-delay-3400">
     <Image
       src="/images/hero_dashboard_img.webp"
       width={1564}
       height={862}
       alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"
-      class="h-auto w-full rounded-xl bg-glass supports-scroll-timeline:animate-hero-scale supports-scroll-timeline:animate-range-[0_500px] supports-scroll-timeline:timeline-scroll"
+      class="h-auto w-full rounded-xl bg-glass sm:supports-scroll-timeline:animate-hero-scale sm:supports-scroll-timeline:animate-range-[0_500px] sm:supports-scroll-timeline:timeline-scroll"
       loading="eager"
     />
   </figure>
