@@ -11,3 +11,18 @@
     ></span><span class="text-neutral-600">%</span>
   </aside>
 </div>
+
+<style is:global>
+  html {
+    animation: unlock-scroll 3.4s step-end forwards;
+  }
+
+  @keyframes unlock-scroll {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: auto;
+    }
+  }
+</style>

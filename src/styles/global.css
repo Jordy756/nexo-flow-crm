@@ -55,15 +55,6 @@
       transform: rotateY(360deg);
     }
   }
-
-  @keyframes unlock-scroll {
-    0% {
-      overflow: hidden;
-    }
-    100% {
-      overflow: auto;
-    }
-  }
 }
 
 @theme inline {
@@ -93,8 +84,7 @@
 
   html {
     scrollbar-width: thin;
-    scrollbar-gutter: stable; /* Previene el salto visual cuando aparece la barra */
-    animation: unlock-scroll 3.4s step-end forwards;
+    scrollbar-gutter: stable;
     @apply scroll-pt-32 scroll-smooth;
   }
 
