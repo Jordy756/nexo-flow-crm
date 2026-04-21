@@ -1,6 +1,7 @@
 ---
 import ArrowUp from "@components/icons/ArrowUp.astro";
 import Background from "@components/layout/Background.astro";
+import Curtain from "@components/layout/Curtain.astro";
 import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
 import FAQ from "@components/sections/faq/FAQ.astro";
@@ -16,6 +17,7 @@ const description =
 ---
 
 <Layout title={title} description={description}>
+  <Curtain />
   <Background class="brightness-50" />
   <Header />
   <main class="relative flex w-full flex-1 flex-col items-center gap-32">
