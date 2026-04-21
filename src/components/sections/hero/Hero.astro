@@ -11,7 +11,7 @@ const requestDemoLink =
 ---
 
 <section class="flex w-[min(var(--max-width),100%)] flex-col items-center gap-8 px-4 md:gap-32">
-  <article class="flex flex-col items-center gap-8">
+  <article class="flex animate-fade-in-up flex-col items-center gap-8 animate-delay-3000">
     <Badge>
       <StarsIcon width={16} class="text-neutral-50" />
       {badge}
@@ -25,18 +25,16 @@ const requestDemoLink =
     </div>
     <div class="flex flex-wrap items-center justify-center gap-4">
       <Link href="/#plans" variant="secondary" class="flex-1">Ver planes</Link>
-      <Link href={requestDemoLink} target="_blank" class="flex-1"> Solicitar demo </Link>
+      <Link href={requestDemoLink} target="_blank" class="flex-1">Solicitar demo</Link>
     </div>
   </article>
-  <figure
-    class="flex w-full flex-col supports-scroll-timeline:animate-hero-scale supports-scroll-timeline:animate-range-[0_500px] supports-scroll-timeline:timeline-scroll"
-  >
+  <figure class="flex w-full animate-fade-in-up flex-col animate-delay-3400">
     <Image
       src="/images/hero_dashboard_img.webp"
       width={1564}
       height={862}
       alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"
-      class="h-auto w-full rounded-xl bg-glass"
+      class="h-auto w-full rounded-xl bg-glass supports-scroll-timeline:animate-hero-scale supports-scroll-timeline:animate-range-[0_500px] supports-scroll-timeline:timeline-scroll"
       loading="eager"
     />
   </figure>
