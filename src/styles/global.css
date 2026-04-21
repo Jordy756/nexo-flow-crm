@@ -1,16 +1,22 @@
 @import "tailwindcss";
 @import "tailwind-animations";
 
+@property --count {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
 @theme {
   --max-width: 1564px;
 
   /* Animations */
   --animate-hero-scale: hero-scale linear both;
   --animate-integrations-flip: flip-horizontal 5s ease-in-out infinite alternate;
-  --animate-curtain-zoom-out: curtain-zoom-out 1.2s cubic-bezier(0.76, 0, 0.24, 1) 2.2s forwards;
-  --animate-curtain-number: curtain-number 2s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+  --animate-curtain-reveal: curtain-reveal 1.2s cubic-bezier(0.76, 0, 0.24, 1) 2.2s forwards;
+  --animate-curtain-counter: curtain-counter 2s cubic-bezier(0.85, 0, 0.15, 1) forwards;
 
-  @keyframes curtain-zoom-out {
+  @keyframes curtain-reveal {
     0% {
       clip-path: inset(0% 0% 0% 0%);
       transform: scale(1);
@@ -23,12 +29,12 @@
     }
   }
 
-  @keyframes curtain-number {
+  @keyframes curtain-counter {
     0% {
-      transform: translateY(0%);
+      --count: 0;
     }
     100% {
-      transform: translateY(-80%);
+      --count: 100;
     }
   }
 

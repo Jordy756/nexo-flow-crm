@@ -1,20 +1,13 @@
 ---
-import Logo from "@components/ui/Logo.astro";
 
-const numbers = [12, 21, 45, 79, 99];
 ---
 
 <div
   aria-hidden="true"
-  class="animate-curtain-zoom-out fixed inset-0 z-50 flex flex-col justify-between bg-neutral-950 p-4 text-neutral-50"
+  class="fixed inset-0 z-50 flex animate-curtain-reveal flex-col justify-end bg-neutral-950 p-4 text-neutral-50"
 >
-  <figure class="flex flex-1 items-center justify-center">
-    <Logo width={255} height={80} class="h-20 animate-pulse" />
-  </figure>
-  
-  <div class="relative h-[1em] self-end overflow-hidden text-9xl font-bold leading-none tracking-tighter">
-    <div class="animate-curtain-number flex flex-col text-center">
-      {numbers.map((number) => <span class="block h-[1em] leading-none">{number}</span>)}
-    </div>
-  </div>
+  <aside class="self-end p-4 text-8xl leading-none font-bold tracking-tighter sm:text-9xl">
+    <span class="animate-curtain-counter [counter-reset:percent_var(--count)] after:content-[counter(percent)]"
+    ></span><span class="text-neutral-600">%</span>
+  </aside>
 </div>
