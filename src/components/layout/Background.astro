@@ -10,11 +10,11 @@ const { class: className, hasGlass } = Astro.props;
 <div class:list={["fixed inset-0 -z-10", hasGlass && "before:absolute before:inset-0 before:z-1 before:bg-glass"]}>
   <video
     class:list={["h-full w-full object-cover", className]}
-    poster="/images/background_poster_img.webp"
+    poster="https://res.cloudinary.com/dd3hdnfqi/image/upload/v1776986630/background_poster_img_ag2peg.webp"
     muted
     autoplay
     loop
   >
-    <source src="/videos/hero.mp4" />
+    <source src="https://res.cloudinary.com/dd3hdnfqi/video/upload/v1776986538/hero_roaqln.mp4" />
   </video>
 </div>
