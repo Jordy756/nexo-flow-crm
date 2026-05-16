@@ -29,13 +29,15 @@ const requestDemoLink = "https://jordy756-minimalist-portfolio.vercel.app/";
       <Link href={requestDemoLink} target="_blank" class="flex-1">Solicitar Demo</Link>
     </div>
   </article>
-  <figure class="flex h-full w-full animate-fade-in-up flex-col animate-delay-3400">
+  <figure
+    class="flex h-full w-full flex-col sm:supports-scroll-timeline:animate-hero-scale sm:supports-scroll-timeline:animate-range-[0_500px] sm:supports-scroll-timeline:timeline-scroll"
+  >
     <Image
       src="https://res.cloudinary.com/dd3hdnfqi/image/upload/v1776986631/hero_dashboard_img_dg8xkp.webp"
       width={1564}
       height={862}
       alt="Vista de dashboard CRM con pipeline, bandeja de mensajes y actividad de equipo"
-      class="h-auto w-full rounded-xl bg-glass sm:supports-scroll-timeline:animate-hero-scale sm:supports-scroll-timeline:animate-range-[0_500px] sm:supports-scroll-timeline:timeline-scroll"
+      class="h-auto w-full animate-fade-in-up rounded-xl bg-glass animate-delay-3400"
       loading="eager"
     />
   </figure>
