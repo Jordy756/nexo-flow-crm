@@ -83,10 +83,7 @@
   }
 
   html {
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
-    scrollbar-color: gray transparent;
-    @apply scroll-pt-32 scroll-smooth;
+    @apply scroll-pt-32 scrollbar-thin scrollbar-thumb-neutral-500 scrollbar-track-transparent scrollbar-gutter-stable scroll-smooth;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
