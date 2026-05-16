@@ -1,5 +1,11 @@
 import Lenis from "lenis";
 
-const lenis = new Lenis({
-  autoRaf: true,
+let lenis: Lenis | undefined;
+
+document.addEventListener("astro:page-load", () => {
+  if (lenis) lenis.destroy();
+
+  lenis = new Lenis({
+    autoRaf: true,
+  });
 });

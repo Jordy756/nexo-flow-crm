@@ -1,6 +1,7 @@
 ---
 import "@styles/global.css";
 import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
 import "lenis/dist/lenis.css";
 
 interface Props {
@@ -42,6 +43,8 @@ const siteName = "Nexo CRM";
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <ClientRouter />
 
     <script src="../scripts/config/lenis.ts"></script>
   </head>
