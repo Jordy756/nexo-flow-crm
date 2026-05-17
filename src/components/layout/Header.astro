@@ -20,7 +20,7 @@ const navItems = [
   ]}
 >
   <nav class="flex w-[min(var(--max-width),100%)] items-center justify-between px-4 py-4 lg:gap-18">
-    <a href="/#" class="transition-opacity hover:opacity-80">
+    <a href={pathname === "/" ? "#root" : "/"} class="transition-opacity hover:opacity-80">
       <Logo width={131.25} height={32} />
     </a>
     <ul class="hidden items-center rounded-full bg-glass p-2 pl-6 font-medium lg:flex lg:gap-16">
@@ -54,7 +54,7 @@ const navItems = [
   >
     <nav class="flex flex-col gap-8 bg-neutral-950 p-6 text-neutral-50">
       <div class="flex items-center justify-between gap-4">
-        <a href="/#" class="transition-opacity hover:opacity-80">
+        <a href={pathname === "/" ? "#root" : "/"} class="transition-opacity hover:opacity-80">
           <Logo width={131.25} height={32} />
         </a>
         <button

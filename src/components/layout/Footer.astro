@@ -13,6 +13,7 @@ const SOCIAL_NETWORKS: Record<string, string | any> = {
 
 const { name, title, socialNetworks } = basics;
 const year = new Date().getFullYear();
+const pathname = Astro.url.pathname;
 
 const footerLinks = [
   {
@@ -37,7 +38,7 @@ const footerLinks = [
 <footer class="flex w-full flex-col items-center gap-6 bg-neutral-950 p-4 py-16">
   <section class="flex w-[min(var(--max-width),100%)] flex-col gap-8 sm:flex-row sm:justify-between sm:gap-16">
     <div class="flex flex-col items-center gap-4 sm:items-start">
-      <a href="/#" class="transition-opacity hover:opacity-80">
+      <a href={pathname === "/" ? "#root" : "/"} class="transition-opacity hover:opacity-80">
         <Logo width={131.25} height={32} class="h-16" />
       </a>
       <p class="text-center font-normal sm:text-start">{title}</p>
