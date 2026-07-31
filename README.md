@@ -119,12 +119,12 @@ nexo-crm/
 
 ## 📜 Scripts Disponibles
 
-| Script | Descripción |
-|--------|-------------|
-| `pnpm dev` | Inicia el servidor de desarrollo con recarga en caliente |
-| `pnpm build` | Genera la build de producción en `/dist` |
-| `pnpm preview` | Previsualiza la build localmente |
-| `pnpm astro` | Ejecuta comandos directos de Astro CLI |
+| Script         | Descripción                                              |
+| -------------- | -------------------------------------------------------- |
+| `pnpm dev`     | Inicia el servidor de desarrollo con recarga en caliente |
+| `pnpm build`   | Genera la build de producción en `/dist`                 |
+| `pnpm preview` | Previsualiza la build localmente                         |
+| `pnpm astro`   | Ejecuta comandos directos de Astro CLI                   |
 
 ---
 
@@ -153,4 +153,4 @@ Copyright (c) 2026 Jordy Castro
 
 ---
 
-*Hecho con ❤️ usando Astro + Tailwind CSS*
+_Hecho con ❤️ usando Astro + Tailwind CSS_
