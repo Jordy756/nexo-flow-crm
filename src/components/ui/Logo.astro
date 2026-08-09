@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import { basics } from "@data/data.json";
+import { Image } from 'astro:assets';
+import { basics } from '@data/data.json';
 
 interface Props {
   class?: string;
@@ -17,5 +17,5 @@ const { class: className, width, height } = Astro.props;
   alt={`Logo de ${name}`}
   width={width}
   height={height}
-  class:list={["h-8 w-full object-contain", className]}
+  class:list={['h-8 w-full object-contain', className]}
 />

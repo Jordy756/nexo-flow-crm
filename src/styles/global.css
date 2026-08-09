@@ -1,8 +1,8 @@
-@import "tailwindcss";
-@import "tailwind-animations";
+@import 'tailwindcss';
+@import 'tailwind-animations';
 
 @property --count {
-  syntax: "<integer>";
+  syntax: '<integer>';
   initial-value: 0;
   inherits: false;
 }

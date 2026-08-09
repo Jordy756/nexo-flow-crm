@@ -1,8 +1,8 @@
 ---
-import "@styles/global.css";
-import { Font } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
-import "lenis/dist/lenis.css";
+import '@styles/global.css';
+import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import 'lenis/dist/lenis.css';
 
 interface Props {
   title: string;
@@ -11,10 +11,10 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-const ogImage = "/images/nexo_og_img.webp";
+const ogImage = '/images/nexo_og_img.webp';
 const url = Astro.url;
 const hostname = url.hostname;
-const siteName = "Nexo CRM";
+const siteName = 'Nexo CRM';
 ---
 
 <!doctype html>
@@ -23,6 +23,7 @@ const siteName = "Nexo CRM";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
 
     <Font cssVariable="--font-dm-sans" preload />

@@ -1,6 +1,6 @@
 ---
-import CheckIcon from "@components/icons/Check.astro";
-import Link from "@components/ui/Link.astro";
+import CheckIcon from '@components/icons/Check.astro';
+import Link from '@components/ui/Link.astro';
 
 interface Props {
   name: string;
@@ -18,9 +18,9 @@ const { name, description, price, features, isPrincipal } = Astro.props;
 
 <article
   class:list={[
-    "flex min-h-125 flex-1 flex-col gap-8 rounded-2xl border bg-glass p-8",
-    "supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_0%_cover_20%] supports-view-timeline:timeline-view",
-    isPrincipal ? "border-neutral-700 lg:-translate-y-4" : "border-neutral-900",
+    'flex min-h-125 flex-1 flex-col gap-8 rounded-2xl border bg-glass p-8',
+    'supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_0%_cover_20%] supports-view-timeline:timeline-view',
+    isPrincipal ? 'border-neutral-700 lg:-translate-y-4' : 'border-neutral-900',
   ]}
 >
   <header class="flex flex-col gap-4">

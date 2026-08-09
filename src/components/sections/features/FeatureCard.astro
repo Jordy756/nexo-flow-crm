@@ -1,6 +1,6 @@
 ---
-import Link from "@components/ui/Link.astro";
-import { Image } from "astro:assets";
+import Link from '@components/ui/Link.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
   feature: {
@@ -25,15 +25,15 @@ const { title, description, image, cta } = feature;
 
 <article
   class:list={[
-    "flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between",
-    reverse && "md:flex-row-reverse",
+    'flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between',
+    reverse && 'md:flex-row-reverse',
   ]}
 >
   <header
     class:list={[
-      "flex flex-1 flex-col items-start gap-2",
-      "supports-view-timeline:timeline-[view(block_50%_0%)] supports-view-timeline:max-md:animate-fade-in-up",
-      reverse ? "supports-view-timeline:md:animate-fade-in-left" : "supports-view-timeline:md:animate-fade-in-right",
+      'flex flex-1 flex-col items-start gap-2',
+      'supports-view-timeline:timeline-[view(block_50%_0%)] supports-view-timeline:max-md:animate-fade-in-up',
+      reverse ? 'supports-view-timeline:md:animate-fade-in-left' : 'supports-view-timeline:md:animate-fade-in-right',
     ]}
   >
     <h3 class="max-w-[20ch] text-3xl">{title}</h3>
@@ -42,9 +42,9 @@ const { title, description, image, cta } = feature;
   </header>
   <figure
     class:list={[
-      "flex-1",
-      "supports-view-timeline:timeline-[view(block_50%_0%)] supports-view-timeline:max-md:animate-fade-in-up",
-      reverse ? "supports-view-timeline:md:animate-fade-in-right" : "supports-view-timeline:md:animate-fade-in-left",
+      'flex-1',
+      'supports-view-timeline:timeline-[view(block_50%_0%)] supports-view-timeline:max-md:animate-fade-in-up',
+      reverse ? 'supports-view-timeline:md:animate-fade-in-right' : 'supports-view-timeline:md:animate-fade-in-left',
     ]}
   >
     <Image
@@ -52,7 +52,7 @@ const { title, description, image, cta } = feature;
       width={100}
       height={100}
       alt={image.alt}
-      class:list={["h-auto w-full md:max-w-md", !reverse && "md:ml-auto"]}
+      class:list={['h-auto w-full md:max-w-md', !reverse && 'md:ml-auto']}
     />
   </figure>
 </article>

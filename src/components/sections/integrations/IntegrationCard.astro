@@ -10,11 +10,11 @@ interface Props {
 }
 
 const { integration } = Astro.props;
-const { icon: Icon, delay, title } = !integration ? { icon: null, delay: 0, title: "" } : integration;
+const { icon: Icon, delay, title } = !integration ? { icon: null, delay: 0, title: '' } : integration;
 const animationDelay = `-${delay}s`;
 ---
 
-<article class:list={["flex rotate-45 rounded-md bg-glass p-8", integration === null && "opacity-60"]} title={title}>
+<article class:list={['flex rotate-45 rounded-md bg-glass p-8', integration === null && 'opacity-60']} title={title}>
   {
     Icon ? (
       <Icon style={{ animationDelay }} width={48} height={48} class="-rotate-45 animate-integrations-flip" />
