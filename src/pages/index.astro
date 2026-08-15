@@ -9,6 +9,7 @@ import Background from '@components/shell/Background.astro';
 import Curtain from '@components/shell/Curtain.astro';
 import Footer from '@components/shell/Footer.astro';
 import Header from '@components/shell/Header.astro';
+import TopButton from '@components/ui/TopButton.astro';
 import Layout from '@layouts/Layout.astro';
 
 const title = 'Nexo CRM | Conversaciones que cierran ventas';
@@ -26,16 +27,7 @@ const description =
     <Features />
     <Plans />
     <FAQ />
-    <div class="absolute -bottom-26 flex w-[min(var(--max-width),100%)] justify-end p-4">
-      <a
-        href="#top"
-        class="flex rounded-full bg-neutral-50 p-3 transition-opacity hover:opacity-80"
-        title="Volver al inicio"
-        aria-label="Volver al inicio"
-      >
-        <ArrowUp width={24} class="text-neutral-950" />
-      </a>
-    </div>
+    <TopButton />
   </main>
   <Footer />
 </Layout>

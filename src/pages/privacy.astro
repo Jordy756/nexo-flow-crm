@@ -1,8 +1,10 @@
 ---
+import ArrowUp from '@components/icons/ArrowUp.astro';
 import Policies from '@components/sections/policies/Policies.astro';
 import Background from '@components/shell/Background.astro';
 import Footer from '@components/shell/Footer.astro';
 import Header from '@components/shell/Header.astro';
+import TopButton from '@components/ui/TopButton.astro';
 import { legal } from '@data/data.json';
 import Layout from '@layouts/Layout.astro';
 
@@ -16,8 +18,9 @@ const { privacy } = legal;
 <Layout title={title} description={description}>
   <Background class="brightness-50" hasGlass />
   <Header />
-  <main class="flex flex-1 flex-col items-center gap-32 px-4">
+  <main class="relative flex flex-1 flex-col items-center gap-32 px-4">
     <Policies policy={privacy} />
+    <TopButton />
   </main>
   <Footer />
 </Layout>
