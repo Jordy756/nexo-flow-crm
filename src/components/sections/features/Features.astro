@@ -10,7 +10,7 @@ const { items } = featuresSection;
   id="features"
   class="relative flex w-full flex-col items-center bg-neutral-950 px-4 before:absolute before:bottom-full before:h-32 before:w-full before:bg-neutral-950 after:absolute after:top-full after:h-32 after:w-full after:bg-neutral-950"
 >
-  <div class="flex w-[min(1160px,100%)] flex-col items-center gap-16">
+  <div class="flex max-w-section flex-col items-center gap-16">
     {items.map((feature, index) => <FeatureCard feature={feature} reverse={index % 2 !== 0} />)}
   </div>
 </section>

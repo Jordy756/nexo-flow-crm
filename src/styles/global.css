@@ -8,7 +8,8 @@
 }
 
 @theme {
-  --max-width: 1564px;
+  --max-width-page: 1564px;
+  --max-width-section: 1160px;
 
   /* Animations */
   --animate-hero-scale: hero-scale linear both;
@@ -75,6 +76,34 @@
 
 @utility bg-glass {
   @apply bg-[#141414]/20 backdrop-blur-md;
+}
+
+@utility max-w-page {
+  width: min(var(--max-width-page), 100%);
+}
+
+@utility max-w-section {
+  width: min(var(--max-width-section), 100%);
+}
+
+@utility overlay-backdrop {
+  &::backdrop {
+    background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+    opacity: 0;
+    backdrop-filter: blur(4px);
+    transition: opacity 350ms ease-out, overlay 350ms ease-out, display 350ms ease-out;
+    transition-behavior: allow-discrete;
+  }
+
+  &:where([open], :popover-open, :open)::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    &:where([open], :popover-open, :open)::backdrop {
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {

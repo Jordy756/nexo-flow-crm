@@ -36,7 +36,7 @@ const footerLinks = [
 ---
 
 <footer class="flex w-full flex-col items-center gap-6 bg-neutral-950 p-4 py-16">
-  <section class="flex w-[min(var(--max-width),100%)] flex-col gap-8 sm:flex-row sm:justify-between sm:gap-16">
+  <section class="flex max-w-page flex-col gap-8 sm:flex-row sm:justify-between sm:gap-16">
     <div class="flex flex-col items-center gap-4 sm:items-start">
       <a href={pathname === '/' ? '#root' : '/'} class="transition-opacity hover:opacity-80">
         <Logo width={131.25} height={32} class="h-16" />
@@ -62,8 +62,8 @@ const footerLinks = [
       }
     </nav>
   </section>
-  <div class="h-px w-[min(var(--max-width),100%)] bg-neutral-800"></div>
-  <section class="flex w-[min(var(--max-width),100%)] flex-col items-center justify-between gap-8 sm:flex-row">
+  <div class="h-px max-w-page bg-neutral-800"></div>
+  <section class="flex max-w-page flex-col items-center justify-between gap-8 sm:flex-row">
     <span class="text-center text-base sm:text-start">&copy; {year} {name}. Hecho para equipos de startups.</span>
     <ul class="flex items-center gap-4">
       {

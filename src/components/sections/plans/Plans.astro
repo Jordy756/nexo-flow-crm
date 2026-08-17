@@ -11,12 +11,12 @@ const { title, description, items } = plansSection;
   class="relative flex w-full flex-col items-center gap-16 px-4 after:absolute after:inset-0 after:-z-10 after:bg-linear-to-b after:from-neutral-950 after:to-transparent"
 >
   <header
-    class="flex w-[min(1160px,100%)] flex-col items-center gap-2 text-center supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
+    class="flex max-w-section flex-col items-center gap-2 text-center supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
   >
     <h2 class="text-5xl">{title}</h2>
     <p>{description}</p>
   </header>
-  <div class="grid w-[min(1160px,100%)] grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
+  <div class="grid max-w-section grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
     {
       items.map(({ name, description, price, features, isPrincipal }) => (
         <PlanCard name={name} description={description} price={price} features={features} isPrincipal={isPrincipal} />

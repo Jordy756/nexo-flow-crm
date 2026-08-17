@@ -73,7 +73,7 @@ const { badge, title, description } = integrationsSection;
   class="relative flex w-full flex-col-reverse items-center gap-16 px-4 after:absolute after:inset-0 after:-z-10 after:bg-linear-to-b after:from-transparent after:to-neutral-950"
 >
   <header
-    class="flex w-[min(1160px,100%)] flex-col items-center gap-4 timeline-view supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
+    class="flex max-w-section flex-col items-center gap-4 timeline-view supports-view-timeline:animate-fade-in-up supports-view-timeline:animate-range-[entry_10%_cover_30%] supports-view-timeline:timeline-view"
   >
     <Badge>
       <StarsIcon width={16} class="text-neutral-50" />
@@ -85,7 +85,7 @@ const { badge, title, description } = integrationsSection;
     </div>
     <Link href="https://google.com" target="_blank" class="mt-4">Explorar más</Link>
   </header>
-  <div class="flex w-[min(1160px,100%)] flex-col items-center py-5">
+  <div class="flex max-w-section flex-col items-center py-5">
     {
       integrations.map((integration) => (
         <div class="flex gap-16">
