@@ -75,7 +75,8 @@
 }
 
 @utility bg-glass {
-  @apply bg-[#141414]/20 backdrop-blur-md;
+  background-color: rgb(20 20 20 / 0.2);
+  backdrop-filter: blur(12px);
 }
 
 @utility max-w-page {
@@ -112,24 +113,33 @@
   }
 
   html {
-    @apply scroll-pt-32 scrollbar-thin scrollbar-thumb-neutral-500 scrollbar-track-transparent scrollbar-gutter-stable scroll-smooth;
+    scroll-padding-top: calc(var(--spacing) * 32);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-neutral-500) transparent;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
   }
 
   :is(a, button) {
-    @apply cursor-pointer;
+    cursor: pointer;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-medium text-balance;
+    font-weight: 500;
+    text-wrap: balance;
   }
 }
 
 @layer components {
   .primary-btn {
-    @apply border-neutral-50 bg-neutral-50 text-neutral-950;
+    border-color: var(--color-neutral-50);
+    background-color: var(--color-neutral-50);
+    color: var(--color-neutral-950);
   }
 
   .secondary-btn {
-    @apply border-neutral-950 bg-neutral-950 text-neutral-50;
+    border-color: var(--color-neutral-950);
+    background-color: var(--color-neutral-950);
+    color: var(--color-neutral-50);
   }
 }
