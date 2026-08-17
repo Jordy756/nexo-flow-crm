@@ -39,22 +39,12 @@
 ```tsx
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden
-                    sm:flex sm:max-w-2xl">
-      <img
-        className="h-48 w-full object-cover sm:h-auto sm:w-48"
-        src={product.image}
-        alt={product.name}
-      />
+    <div className="overflow-hidden rounded-lg bg-white shadow-lg sm:flex sm:max-w-2xl">
+      <img className="h-48 w-full object-cover sm:h-auto sm:w-48" src={product.image} alt={product.name} />
       <div className="p-6">
-        <h3 className="text-lg font-semibold text-gray-900">
-          {product.name}
-        </h3>
-        <p className="mt-2 text-gray-600">
-          {product.description}
-        </p>
-        <button className="mt-4 px-4 py-2 bg-indigo-600 text-white
-                          rounded-lg hover:bg-indigo-700 transition">
+        <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
+        <p className="mt-2 text-gray-600">{product.description}</p>
+        <button className="mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-white transition hover:bg-indigo-700">
           Add to Cart
         </button>
       </div>
@@ -100,10 +90,7 @@ function ThemeToggle() {
   }, [darkMode]);
 
   return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800"
-    >
+    <button onClick={() => setDarkMode(!darkMode)} className="rounded-lg bg-gray-200 p-2 dark:bg-gray-800">
       {darkMode ? '🌙' : '☀️'}
     </button>
   );

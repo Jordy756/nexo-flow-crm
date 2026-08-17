@@ -127,14 +127,14 @@ it('sets completedAt when task is completed', async () => {
   const completed = await taskService.completeTask(task.id);
 
   expect(completed.status).toBe('completed');
-  expect(completed.completedAt).toBeInstanceOf(Date);  // This fails → bug confirmed
+  expect(completed.completedAt).toBeInstanceOf(Date); // This fails → bug confirmed
 });
 
 // Step 2: Fix the bug
 export async function completeTask(id: string): Promise<Task> {
   return db.tasks.update(id, {
     status: 'completed',
-    completedAt: new Date(),  // This was missing
+    completedAt: new Date(), // This was missing
   });
 }
 
@@ -195,16 +195,13 @@ Assert on the _outcome_ of an operation, not on which methods were called intern
 // Good: Tests what the function does (state-based)
 it('returns tasks sorted by creation date, newest first', async () => {
   const tasks = await listTasks({ sortBy: 'createdAt', sortOrder: 'desc' });
-  expect(tasks[0].createdAt.getTime())
-    .toBeGreaterThan(tasks[1].createdAt.getTime());
+  expect(tasks[0].createdAt.getTime()).toBeGreaterThan(tasks[1].createdAt.getTime());
 });
 
 // Bad: Tests how the function works internally (interaction-based)
 it('calls db.query with ORDER BY created_at DESC', async () => {
   await listTasks({ sortBy: 'createdAt', sortOrder: 'desc' });
-  expect(db.query).toHaveBeenCalledWith(
-    expect.stringContaining('ORDER BY created_at DESC')
-  );
+  expect(db.query).toHaveBeenCalledWith(expect.stringContaining('ORDER BY created_at DESC'));
 });
 ```
 

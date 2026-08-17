@@ -92,7 +92,10 @@
     background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
     opacity: 0;
     backdrop-filter: blur(4px);
-    transition: opacity 350ms ease-out, overlay 350ms ease-out, display 350ms ease-out;
+    transition:
+      opacity 350ms ease-out,
+      overlay 350ms ease-out,
+      display 350ms ease-out;
     transition-behavior: allow-discrete;
   }
 

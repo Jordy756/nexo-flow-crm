@@ -117,7 +117,7 @@ import { useState } from 'react';
 function Button({
   variant = 'primary',
   size = 'md',
-  children
+  children,
 }: {
   variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
@@ -136,12 +136,6 @@ function Button({
     lg: 'px-6 py-3 text-lg',
   };
 
-  return (
-    <button
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`}
-    >
-      {children}
-    </button>
-  );
+  return <button className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`}>{children}</button>;
 }
 ```

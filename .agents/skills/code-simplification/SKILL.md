@@ -77,10 +77,13 @@ function getStatusLabel(item: Item): string {
 
 ```typescript
 // UNCLEAR: Chained reduces with inline logic
-const result = items.reduce((acc, item) => ({
-  ...acc,
-  [item.id]: { ...acc[item.id], count: (acc[item.id]?.count ?? 0) + 1 }
-}), {});
+const result = items.reduce(
+  (acc, item) => ({
+    ...acc,
+    [item.id]: { ...acc[item.id], count: (acc[item.id]?.count ?? 0) + 1 },
+  }),
+  {},
+);
 
 // CLEAR: Named intermediate step
 const countById = new Map<string, number>();

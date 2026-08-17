@@ -100,17 +100,19 @@ const hashedPassword = await hash(plaintext, SALT_ROUNDS);
 const isValid = await compare(plaintext, hashedPassword);
 
 // Session management
-app.use(session({
-  secret: process.env.SESSION_SECRET,  // From environment, not code
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    httpOnly: true,     // Not accessible via JavaScript
-    secure: true,       // HTTPS only
-    sameSite: 'lax',    // CSRF protection
-    maxAge: 24 * 60 * 60 * 1000,  // 24 hours
-  },
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET, // From environment, not code
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true, // Not accessible via JavaScript
+      secure: true, // HTTPS only
+      sameSite: 'lax', // CSRF protection
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    },
+  }),
+);
 ```
 
 ### Cross-Site Scripting (XSS)
@@ -137,7 +139,7 @@ app.patch('/api/tasks/:id', authenticate, async (req, res) => {
   // Check that the authenticated user owns this resource
   if (task.ownerId !== req.user.id) {
     return res.status(403).json({
-      error: { code: 'FORBIDDEN', message: 'Not authorized to modify this task' }
+      error: { code: 'FORBIDDEN', message: 'Not authorized to modify this task' },
     });
   }
 
@@ -155,21 +157,25 @@ import helmet from 'helmet';
 app.use(helmet());
 
 // Content Security Policy
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'"],
-    styleSrc: ["'self'", "'unsafe-inline'"],  // Tighten if possible
-    imgSrc: ["'self'", 'data:', 'https:'],
-    connectSrc: ["'self'"],
-  },
-}));
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"], // Tighten if possible
+      imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'"],
+    },
+  }),
+);
 
 // CORS — restrict to known origins
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
+    credentials: true,
+  }),
+);
 ```
 
 ### Sensitive Data Exposure
@@ -316,18 +322,24 @@ Audits only find known advisories; they do not catch a newly malicious or typosq
 import rateLimit from 'express-rate-limit';
 
 // General API rate limit
-app.use('/api/', rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,                   // 100 requests per window
-  standardHeaders: true,
-  legacyHeaders: false,
-}));
+app.use(
+  '/api/',
+  rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // 100 requests per window
+    standardHeaders: true,
+    legacyHeaders: false,
+  }),
+);
 
 // Stricter limit for auth endpoints
-app.use('/api/auth/', rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,  // 10 attempts per 15 minutes
-}));
+app.use(
+  '/api/auth/',
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 10, // 10 attempts per 15 minutes
+  }),
+);
 ```
 
 ## Secrets Management
@@ -369,8 +381,8 @@ If your app calls an LLM — chatbots, summarizers, agents, RAG — it inherits 
 ```typescript
 // BAD: trusting model output as a command or as markup
 const sql = await llm.generate(`Write SQL for: ${userQuestion}`);
-await db.query(sql);                                   // arbitrary query execution
-container.innerHTML = await llm.reply(userMessage);   // stored XSS, via the model
+await db.query(sql); // arbitrary query execution
+container.innerHTML = await llm.reply(userMessage); // stored XSS, via the model
 
 // GOOD: model output is data — parse defensively, then validate, then encode
 let intent;

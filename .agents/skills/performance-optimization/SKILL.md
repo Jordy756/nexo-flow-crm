@@ -225,7 +225,11 @@ const TaskItem = React.memo(function TaskItem({ task }: Props) {
 // Use useMemo for expensive computations
 function TaskStats({ tasks }: Props) {
   const stats = useMemo(() => calculateStats(tasks), [tasks]);
-  return <div>{stats.completed} / {stats.total}</div>;
+  return (
+    <div>
+      {stats.completed} / {stats.total}
+    </div>
+  );
 }
 ```
 
@@ -269,10 +273,13 @@ async function getAppConfig(): Promise<AppConfig> {
 }
 
 // HTTP caching headers for static assets
-app.use('/static', express.static('public', {
-  maxAge: '1y',           // Cache for 1 year
-  immutable: true,        // Never revalidate (use content hashing in filenames)
-}));
+app.use(
+  '/static',
+  express.static('public', {
+    maxAge: '1y', // Cache for 1 year
+    immutable: true, // Never revalidate (use content hashing in filenames)
+  }),
+);
 
 // Cache-Control for API responses
 res.set('Cache-Control', 'public, max-age=300'); // 5 minutes

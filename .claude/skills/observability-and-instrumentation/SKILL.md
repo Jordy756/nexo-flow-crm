@@ -59,13 +59,16 @@ Log events, not prose. Every log line is a JSON object with a stable event name 
 logger.info(`Payment ${id} failed for user ${userId} after ${n} retries`);
 
 // GOOD: stable event name + structured fields
-logger.warn({
-  event: 'payment_failed',
-  paymentId: id,
-  provider: 'stripe',
-  errorCode: err.code,
-  attempt: n,
-}, 'payment failed');
+logger.warn(
+  {
+    event: 'payment_failed',
+    paymentId: id,
+    provider: 'stripe',
+    errorCode: err.code,
+    attempt: n,
+  },
+  'payment failed',
+);
 ```
 
 **Log levels — use them consistently:**
@@ -103,7 +106,7 @@ import { Histogram } from 'prom-client';
 const httpDuration = new Histogram({
   name: 'http_request_duration_seconds',
   help: 'HTTP request duration',
-  labelNames: ['method', 'route', 'status_class'],  // '2xx', not '200'
+  labelNames: ['method', 'route', 'status_class'], // '2xx', not '200'
   buckets: [0.05, 0.1, 0.25, 0.5, 1, 2.5, 5],
 });
 ```

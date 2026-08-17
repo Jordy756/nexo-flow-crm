@@ -67,9 +67,9 @@ Pick one error strategy and use it everywhere:
 // Every error response follows the same shape
 interface APIError {
   error: {
-    code: string;        // Machine-readable: "VALIDATION_ERROR"
-    message: string;     // Human-readable: "Email is required"
-    details?: unknown;   // Additional context when helpful
+    code: string; // Machine-readable: "VALIDATION_ERROR"
+    message: string; // Human-readable: "Email is required"
+    details?: unknown; // Additional context when helpful
   };
 }
 
@@ -133,15 +133,15 @@ Extend interfaces without breaking existing consumers:
 interface CreateTaskInput {
   title: string;
   description?: string;
-  priority?: 'low' | 'medium' | 'high';  // Added later, optional
-  labels?: string[];                       // Added later, optional
+  priority?: 'low' | 'medium' | 'high'; // Added later, optional
+  labels?: string[]; // Added later, optional
 }
 
 // Bad: Change existing field types or remove fields
 interface CreateTaskInput {
   title: string;
   // description: string;  // Removed — breaks existing consumers
-  priority: number;         // Changed from string — breaks existing consumers
+  priority: number; // Changed from string — breaks existing consumers
 }
 ```
 
@@ -223,10 +223,14 @@ type TaskStatus =
 // Consumer gets type narrowing
 function getStatusLabel(status: TaskStatus): string {
   switch (status.type) {
-    case 'pending': return 'Pending';
-    case 'in_progress': return `In progress (${status.assignee})`;
-    case 'completed': return `Done on ${status.completedAt}`;
-    case 'cancelled': return `Cancelled: ${status.reason}`;
+    case 'pending':
+      return 'Pending';
+    case 'in_progress':
+      return `In progress (${status.assignee})`;
+    case 'completed':
+      return `Done on ${status.completedAt}`;
+    case 'cancelled':
+      return `Cancelled: ${status.reason}`;
   }
 }
 ```
