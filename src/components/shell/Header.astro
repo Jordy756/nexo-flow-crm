@@ -1,16 +1,7 @@
 ---
-import CloseIcon from '@components/icons/Close.astro';
-import MenuIcon from '@components/icons/Menu.astro';
-import Link from '@components/ui/Link.astro';
-import Logo from '@components/ui/Logo.astro';
+import Navbar from '@components/ui/Navbar.astro';
 
 const pathname = Astro.url.pathname;
-
-const navItems = [
-  { label: 'Integraciones', href: '/#integrations' },
-  { label: 'Funciones', href: '/#features' },
-  { label: 'Planes', href: '/#plans' },
-];
 ---
 
 <header
@@ -19,68 +10,5 @@ const navItems = [
     pathname === '/' && 'animate-slide-in-top animate-delay-3200',
   ]}
 >
-  <nav class="flex max-w-page items-center justify-between px-4 py-4 lg:gap-18">
-    <a href={pathname === '/' ? '#root' : '/'} class="transition-opacity hover:opacity-80">
-      <Logo width={131.25} height={32} />
-    </a>
-    <ul class="hidden items-center rounded-full bg-glass p-2 pl-6 font-medium lg:flex lg:gap-16">
-      {
-        navItems.map(({ href, label }) => (
-          <li class="text-base">
-            <a href={href} class="transition-opacity hover:opacity-80">
-              {label}
-            </a>
-          </li>
-        ))
-      }
-      <li>
-        <Link href="https://google.com" target="_blank">Login</Link>
-      </li>
-    </ul>
-    <button
-      class="cursor-pointer rounded-full bg-neutral-50 p-2.75 transition-opacity hover:opacity-80 lg:pointer-events-none lg:opacity-0"
-      popovertarget="nav-open"
-      aria-label="Abrir menú de navegación"
-      title="Abrir menú de navegación"
-    >
-      <MenuIcon width={24} height={24} class="text-neutral-950" />
-    </button>
-  </nav>
-
-  <div
-    id="nav-open"
-    class="w-full -translate-y-full overlay-backdrop transition-[translate,display,overlay,opacity] transition-discrete duration-500 ease-in-out open:translate-y-0 starting:open:-translate-y-full"
-    popover
-  >
-    <nav class="flex flex-col gap-8 bg-neutral-950 p-6 text-neutral-50">
-      <div class="flex items-center justify-between gap-4">
-        <a href={pathname === '/' ? '#root' : '/'} class="transition-opacity hover:opacity-80">
-          <Logo width={131.25} height={32} />
-        </a>
-        <button
-          class="cursor-pointer rounded-full bg-neutral-50 p-2.75 transition-opacity hover:opacity-80"
-          popovertarget="nav-open"
-          popovertargetaction="hide"
-          aria-label="Cerrar menú de navegación"
-          title="Cerrar menú de navegación"
-        >
-          <CloseIcon width={24} height={24} class="text-neutral-950" />
-        </button>
-      </div>
-      <ul class="flex flex-col items-start gap-4 font-medium">
-        {
-          navItems.map(({ href, label }) => (
-            <li class="text-base">
-              <a href={href} class="transition-opacity hover:opacity-80">
-                {label}
-              </a>
-            </li>
-          ))
-        }
-        <li class="mt-4">
-          <Link href="https://google.com" target="_blank">Login</Link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <Navbar />
 </header>

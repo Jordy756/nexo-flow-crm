@@ -93,9 +93,9 @@
     opacity: 0;
     backdrop-filter: blur(4px);
     transition:
-      opacity 350ms ease-out,
-      overlay 350ms ease-out,
-      display 350ms ease-out;
+      opacity 0.3s var(--ease-in-out),
+      overlay 0.3s var(--ease-in-out),
+      display 0.3s var(--ease-in-out);
     transition-behavior: allow-discrete;
   }
 
@@ -134,13 +134,13 @@
 }
 
 @layer components {
-  .primary-btn {
+  .btn-primary {
     border-color: var(--color-neutral-50);
     background-color: var(--color-neutral-50);
     color: var(--color-neutral-950);
   }
 
-  .secondary-btn {
+  .btn-secondary {
     border-color: var(--color-neutral-950);
     background-color: var(--color-neutral-950);
     color: var(--color-neutral-50);

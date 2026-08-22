@@ -11,7 +11,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-const ogImage = '/images/nexo_og_img.webp';
+const siteUrl = Astro.site;
+const ogImageUrl = new URL('/images/nexo_og_img.webp', siteUrl).href;
 const url = Astro.url;
 const hostname = url.hostname;
 const siteName = 'Nexo CRM';
@@ -34,7 +35,7 @@ const siteName = 'Nexo CRM';
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="es_ES" />
 
@@ -43,14 +44,14 @@ const siteName = 'Nexo CRM';
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <ClientRouter />
 
     <script src="../scripts/config/lenis.ts"></script>
   </head>
   <body class="bg-neutral-950 text-lg font-light text-pretty text-neutral-50">
-    <div id="root" class="relative flex min-h-dvh flex-col items-center gap-32 overflow-clip">
+    <div id="root" class="relative flex min-h-dvh flex-col items-center gap-32 overflow-x-clip">
       <slot />
     </div>
   </body>

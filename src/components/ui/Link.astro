@@ -3,17 +3,17 @@ import ArrowOutwardIcon from '@components/icons/ArrowOutward.astro';
 import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends HTMLAttributes<'a'> {
-  variant?: 'primary-btn' | 'secondary-btn';
+  variant?: 'btn-primary' | 'btn-secondary';
 }
 
-const { variant = 'primary-btn', class: className, ...rest } = Astro.props;
+const { variant = 'btn-primary', class: className, ...rest } = Astro.props;
 ---
 
 <a
   class:list={[
-    'group flex items-center gap-3 rounded-full border py-2 pr-2 pl-6 text-base font-medium whitespace-nowrap transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60',
-    variant,
     className,
+    variant,
+    'group flex items-center gap-3 rounded-full border py-2 pr-2 pl-6 text-base font-medium whitespace-nowrap transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60',
   ]}
   {...rest}
 >
@@ -21,7 +21,7 @@ const { variant = 'primary-btn', class: className, ...rest } = Astro.props;
   <div
     class:list={[
       'flex rounded-full p-1 transition-[rotate] group-hover:rotate-45',
-      variant === 'primary-btn' && 'bg-neutral-950',
+      variant === 'btn-primary' && 'bg-neutral-950',
     ]}
   >
     <ArrowOutwardIcon width={20} class="text-neutral-50" />
