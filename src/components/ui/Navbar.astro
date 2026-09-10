@@ -18,17 +18,17 @@ const navItems = [
     <Logo width={131.25} height={32} />
   </a>
   <ul class="hidden items-center rounded-full bg-glass p-2 pl-6 font-medium lg:flex lg:gap-16">
-    {
-      navItems.map(({ href, label }) => (
-        <li class="text-base">
-          <a href={href} class="transition-opacity hover:opacity-80">
-            {label}
-          </a>
-        </li>
-      ))
-    }
+    {navItems.map(({ href, label }) => (
+      <li class="text-base">
+        <a href={href} class="transition-opacity hover:opacity-80">
+          {label}
+        </a>
+      </li>
+    ))}
     <li>
-      <Link href="https://google.com" target="_blank">Login</Link>
+      <Link href="https://google.com" target="_blank">
+        Login
+      </Link>
     </li>
   </ul>
   <button
@@ -62,17 +62,17 @@ const navItems = [
       </button>
     </div>
     <ul class="flex flex-col items-start gap-4 font-medium">
-      {
-        navItems.map(({ href, label }) => (
-          <li class="text-base">
-            <a href={href} class="transition-opacity hover:opacity-80">
-              {label}
-            </a>
-          </li>
-        ))
-      }
+      {navItems.map(({ href, label }) => (
+        <li class="text-base">
+          <a href={href} class="transition-opacity hover:opacity-80">
+            {label}
+          </a>
+        </li>
+      ))}
       <li class="mt-4">
-        <Link href="https://google.com" target="_blank">Login</Link>
+        <Link href="https://google.com" target="_blank">
+          Login
+        </Link>
       </li>
     </ul>
   </nav>

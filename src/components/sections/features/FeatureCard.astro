@@ -38,7 +38,9 @@ const { title, description, image, cta } = feature;
   >
     <h3 class="max-w-[20ch] text-3xl">{title}</h3>
     <p class="mb-2 max-w-[50ch]">{description}</p>
-    <Link href={cta.href} target={cta.target}>{cta.label}</Link>
+    <Link href={cta.href} target={cta.target}>
+      {cta.label}
+    </Link>
   </header>
   <figure
     class:list={[

@@ -23,6 +23,8 @@ const lastModified = getFormattedFullDate(new Date());
     <p class="text-md opacity-80">Última actualización: {lastModified}</p>
   </header>
   <div class="flex flex-col gap-8">
-    {sections.map((policy, index) => <PolicyCard index={index} policy={policy} />)}
+    {sections.map((policy, index) => (
+      <PolicyCard index={index} policy={policy} />
+    ))}
   </div>
 </section>

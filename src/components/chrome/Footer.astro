@@ -44,47 +44,45 @@ const footerLinks = [
       <p class="text-center font-normal sm:text-start">{title}</p>
     </div>
     <nav class="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-16 sm:text-left">
-      {
-        footerLinks.map((section) => (
-          <div class="flex flex-col gap-4">
-            <h2>{section.title}</h2>
-            <ul class="flex flex-col gap-2">
-              {section.links.map((item) => (
-                <li class="text-base opacity-80">
-                  <a href={item.href} class="transition-opacity hover:opacity-80">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      {footerLinks.map((section) => (
+        <div class="flex flex-col gap-4">
+          <h2>{section.title}</h2>
+          <ul class="flex flex-col gap-2">
+            {section.links.map((item) => (
+              <li class="text-base opacity-80">
+                <a href={item.href} class="transition-opacity hover:opacity-80">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </nav>
   </section>
   <div class="h-px max-w-page bg-neutral-800"></div>
   <section class="flex max-w-page flex-col items-center justify-between gap-8 sm:flex-row">
-    <span class="text-center text-base sm:text-start">&copy; {year} {name}. Hecho para equipos de startups.</span>
+    <span class="text-center text-base sm:text-start">
+      &copy; {year} {name}. Hecho para equipos de startups.
+    </span>
     <ul class="flex items-center gap-4">
-      {
-        socialNetworks.map(({ network, url }) => {
-          const Icon = SOCIAL_NETWORKS[network];
-          return (
-            <li>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="transition-opacity hover:opacity-80"
-                aria-label={`Seguir a ${name} en ${network}`}
-                title={`Seguir a ${name} en ${network}`}
-              >
-                <Icon width={24} color="var(--neutral-50)" />
-              </a>
-            </li>
-          );
-        })
-      }
+      {socialNetworks.map(({ network, url }) => {
+        const Icon = SOCIAL_NETWORKS[network];
+        return (
+          <li>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-opacity hover:opacity-80"
+              aria-label={`Seguir a ${name} en ${network}`}
+              title={`Seguir a ${name} en ${network}`}
+            >
+              <Icon width={24} color="var(--neutral-50)" />
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </section>
 </footer>
