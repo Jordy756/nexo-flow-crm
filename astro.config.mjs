@@ -6,15 +6,17 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nexo-flow-crm.vercel.app/',
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   fonts: [
     {
       name: 'DM Sans',
       provider: fontProviders.google(),
       cssVariable: '--font-dm-sans',
-      weights: [300, 400, 500, 700],
+      weights: [300, 400, 500],
       subsets: ['latin'],
       styles: ['normal'],
       display: 'swap',
@@ -22,5 +24,6 @@ export default defineConfig({
       fallbacks: ['sans-serif'],
     },
   ],
+
   integrations: [sitemap()],
 });

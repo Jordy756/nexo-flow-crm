@@ -11,6 +11,8 @@
   --max-width-page: 1564px;
   --max-width-section: 1160px;
 
+  --font-sans: var(--font-dm-sans);
+
   /* Animations */
   --animate-hero-scale: hero-scale linear both;
   --animate-integrations-flip: flip-horizontal 5s ease-in-out infinite alternate;
@@ -56,10 +58,6 @@
       transform: rotateY(360deg);
     }
   }
-}
-
-@theme inline {
-  --font-sans: var(--font-dm-sans);
 }
 
 @custom-variant supports-scroll-timeline {
@@ -115,20 +113,12 @@
     interpolate-size: allow-keywords;
   }
 
-  html {
-    scroll-padding-top: calc(var(--spacing) * 32);
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-neutral-500) transparent;
-    scrollbar-gutter: stable;
-    scroll-behavior: smooth;
-  }
-
   :is(a, button) {
     cursor: pointer;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     text-wrap: balance;
   }
 }
